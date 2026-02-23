@@ -103,7 +103,7 @@ export default function ProcessSection() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="process-section">
+        <section id="services" ref={sectionRef} className="process-section">
             {/* Section header */}
             <div className="process-header">
                 <div className="process-subtitle-row">

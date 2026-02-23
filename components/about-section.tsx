@@ -146,6 +146,7 @@ export default function AboutSection() {
 
     return (
         <section
+            id="about"
             ref={sectionRef}
             className="relative py-32 md:py-48"
         >
