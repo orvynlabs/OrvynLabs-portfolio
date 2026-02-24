@@ -103,7 +103,7 @@ export default function CaseStudiesSection() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="cs-section">
+        <section id="our-work" ref={sectionRef} className="cs-section">
             {/* Header */}
             <div className="cs-header">
                 <div className="cs-subtitle-row">

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Plus, X, ArrowRight } from 'lucide-react'
+import { Plus, X } from 'lucide-react'
 
 interface FaqItem {
     question: string
@@ -209,147 +209,19 @@ export default function FaqSection() {
                 </h2>
             </div>
 
-            {/* Content: two columns on desktop, stacked on mobile */}
+            {/* Centered FAQ accordion */}
             <div
                 style={{
-                    display: isMobile ? 'flex' : 'grid',
-                    flexDirection: isMobile ? 'column' : undefined,
-                    gridTemplateColumns: isMobile ? undefined : '1fr 1.5fr',
-                    gap: isMobile ? '32px' : '48px',
-                    maxWidth: isMobile ? '100%' : '1100px',
+                    maxWidth: '720px',
                     margin: '0 auto',
                     padding: isMobile ? '0 20px' : '0 32px',
-                    alignItems: 'start',
                 }}
             >
-                {/* Left — CTA card */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
-                    style={{
-                        position: isMobile ? 'relative' : 'sticky',
-                        top: isMobile ? 'auto' : '120px',
-                    }}
-                >
-                    <div
-                        style={{
-                            background: 'rgba(255,255,255,0.05)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            borderRadius: '24px',
-                            padding: isMobile ? '28px 24px' : '36px 32px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                        }}
-                    >
-                        {/* Avatar */}
-                        <div style={{ marginBottom: '20px' }}>
-                            <div
-                                style={{
-                                    width: '52px',
-                                    height: '52px',
-                                    borderRadius: '50%',
-                                    background: 'rgba(255,255,255,0.08)',
-                                    border: '2px solid rgba(255,255,255,0.12)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '24px',
-                                }}
-                            >
-                                👋
-                            </div>
-                        </div>
-
-                        <h3
-                            style={{
-                                fontFamily: 'var(--font-display)',
-                                fontSize: isMobile ? '18px' : '20px',
-                                fontWeight: 600,
-                                color: '#f0f0f0',
-                                letterSpacing: '-0.015em',
-                                lineHeight: 1.3,
-                            }}
-                        >
-                            Have more questions?
-                        </h3>
-                        <p
-                            style={{
-                                fontFamily: 'var(--font-display)',
-                                fontSize: isMobile ? '16px' : '18px',
-                                fontWeight: 600,
-                                color: '#f0f0f0',
-                                letterSpacing: '-0.015em',
-                                marginBottom: '24px',
-                            }}
-                        >
-                            Book a free discovery call
-                        </p>
-
-                        {/* CTA Button */}
-                        <button
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '10px',
-                                width: '100%',
-                                justifyContent: 'center',
-                                padding: '14px 28px',
-                                borderRadius: '999px',
-                                background: '#f0f0f0',
-                                color: '#0a0a0a',
-                                fontFamily: 'var(--font-display)',
-                                fontSize: '15px',
-                                fontWeight: 600,
-                                letterSpacing: '-0.01em',
-                                border: 'none',
-                                cursor: 'pointer',
-                                marginBottom: '16px',
-                            }}
-                        >
-                            <span
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '24px',
-                                    height: '24px',
-                                    borderRadius: '50%',
-                                    background: '#0a0a0a',
-                                    color: '#f0f0f0',
-                                    fontSize: '10px',
-                                }}
-                            >
-                                ▶
-                            </span>
-                            <span>Book a Meeting</span>
-                            <ArrowRight size={16} />
-                        </button>
-
-                        <p
-                            style={{
-                                fontSize: '13px',
-                                color: 'rgba(255,255,255,0.4)',
-                                textAlign: 'center',
-                                width: '100%',
-                            }}
-                        >
-                            Or, email me at{' '}
-                            <strong style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>
-                                hello@orvynlabs.com
-                            </strong>
-                        </p>
-                    </div>
-                </motion.div>
-
-                {/* Right — FAQ accordion */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
                     style={{ display: 'flex', flexDirection: 'column' }}
                 >
                     {faqs.map((item, index) => (
