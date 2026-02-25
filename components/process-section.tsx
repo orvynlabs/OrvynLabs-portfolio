@@ -79,27 +79,27 @@ export default function ProcessSection() {
     useEffect(() => {
         if (!sectionRef.current || !cardsRef.current) return
 
-        const cards = cardsRef.current.querySelectorAll('.process-card')
+        const ctx = gsap.context(() => {
+            const cards = cardsRef.current!.querySelectorAll('.process-card')
 
-        gsap.set(cards, { opacity: 0, y: 60 })
+            gsap.set(cards, { opacity: 0, y: 60 })
 
-        gsap.to(cards, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.12,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: cardsRef.current,
-                start: 'top 80%',
-                end: 'top 40%',
-                toggleActions: 'play none none none',
-            },
-        })
+            gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.12,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: cardsRef.current,
+                    start: 'top 80%',
+                    end: 'top 40%',
+                    toggleActions: 'play none none none',
+                },
+            })
+        }, sectionRef.current)
 
-        return () => {
-            ScrollTrigger.getAll().forEach((t) => t.kill())
-        }
+        return () => ctx.revert()
     }, [])
 
     return (

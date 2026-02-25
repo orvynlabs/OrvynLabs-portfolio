@@ -121,26 +121,37 @@ export default function AboutSection() {
     useEffect(() => {
         if (!textRef.current || !sectionRef.current) return
 
-        // Split the paragraph into lines
-        const split = new SplitText(textRef.current, { type: 'lines' })
+        let split: SplitText | null = null
+        let ctx: gsap.Context | null = null
 
-        // Animate each line's backgroundPositionX on scroll
-        split.lines.forEach((line) => {
-            gsap.to(line, {
-                backgroundPositionX: 0,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: line,
-                    scrub: 1,
-                    start: 'top center',
-                    end: 'bottom center',
-                },
-            })
+        // Defer to next frame so the DOM is fully laid out before measuring lines
+        const raf = requestAnimationFrame(() => {
+            ctx = gsap.context(() => {
+                // Split the paragraph into lines
+                split = new SplitText(textRef.current!, { type: 'lines' })
+
+                // Animate each line's backgroundPositionX on scroll
+                split.lines.forEach((line) => {
+                    gsap.to(line, {
+                        backgroundPositionX: 0,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: line,
+                            scrub: 1,
+                            start: 'top 80%',
+                            end: 'bottom center',
+                        },
+                    })
+                })
+
+                // Recalculate all trigger positions after split
+                ScrollTrigger.refresh()
+            }, sectionRef.current!)
         })
 
         return () => {
-            split.revert()
-            ScrollTrigger.getAll().forEach((t) => t.kill())
+            cancelAnimationFrame(raf)
+            if (ctx) ctx.revert()
         }
     }, [])
 

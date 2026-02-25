@@ -863,6 +863,16 @@ html {
   }
 }
 
+/* GPU-accelerated layers for smooth animations */
+.gsap-text-reveal div,
+.process-card,
+.cs-card {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

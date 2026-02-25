@@ -88,22 +88,22 @@ export default function AboutPage() {
     useEffect(() => {
         if (!heroRef.current) return
 
-        gsap.fromTo(
-            heroRef.current.querySelectorAll('.gsap-fade'),
-            { opacity: 0, y: 30 },
-            {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-                duration: 0.8,
-                ease: 'power3.out',
-                delay: 0.3,
-            }
-        )
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                '.gsap-fade',
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    delay: 0.3,
+                }
+            )
+        }, heroRef.current)
 
-        return () => {
-            ScrollTrigger.getAll().forEach((t) => t.kill())
-        }
+        return () => ctx.revert()
     }, [])
 
     return (

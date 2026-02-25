@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
-import SplashCursor from "@/components/SplashCursor";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${bricolage.variable} antialiased`}
       >
-        <SplashCursor />
         {children}
       </body>
     </html>

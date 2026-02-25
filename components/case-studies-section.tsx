@@ -80,26 +80,26 @@ export default function CaseStudiesSection() {
     useEffect(() => {
         if (!sectionRef.current || !gridRef.current) return
 
-        const cards = gridRef.current.querySelectorAll('.cs-card')
+        const ctx = gsap.context(() => {
+            const cards = gridRef.current!.querySelectorAll('.cs-card')
 
-        gsap.set(cards, { opacity: 0, y: 50 })
+            gsap.set(cards, { opacity: 0, y: 50 })
 
-        gsap.to(cards, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.15,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: gridRef.current,
-                start: 'top 82%',
-                toggleActions: 'play none none none',
-            },
-        })
+            gsap.to(cards, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.15,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: gridRef.current,
+                    start: 'top 82%',
+                    toggleActions: 'play none none none',
+                },
+            })
+        }, sectionRef.current)
 
-        return () => {
-            ScrollTrigger.getAll().forEach((t) => t.kill())
-        }
+        return () => ctx.revert()
     }, [])
 
     return (

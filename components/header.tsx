@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils'
 const menuItems = [
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Our Work', href: '#our-work' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Our Work', href: '/#our-work' },
+    { name: 'Contact', href: '/#contact' },
 ]
 
 export const HeroHeader = () => {
@@ -35,7 +35,7 @@ export const HeroHeader = () => {
                             <Link
                                 href="/"
                                 aria-label="home"
-                                className={cn('flex items-center space-x-2 transition-all duration-300', !isScrolled && '-ml-32')}>
+                                className="flex items-center space-x-2 transition-all duration-300">
                                 <Logo />
                             </Link>
 
@@ -82,7 +82,7 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#contact" onClick={() => setMenuState(false)}>
+                                    <Link href="/#contact" onClick={() => setMenuState(false)}>
                                         <span>Contact </span>
                                     </Link>
                                 </Button>
@@ -90,7 +90,7 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#contact">
+                                    <Link href="/#contact">
                                         <span>Get Started</span>
                                     </Link>
                                 </Button>

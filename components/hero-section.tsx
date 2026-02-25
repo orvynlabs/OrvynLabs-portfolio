@@ -83,7 +83,7 @@ export default function HeroSection() {
                             className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
 
-                        <div className="mx-auto max-w-7xl px-6">
+                        <div className="mx-auto w-full max-w-[90rem] px-6 lg:px-16 xl:px-24">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
                                     <Link
@@ -107,7 +107,7 @@ export default function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="font-display mx-auto mt-8 max-w-4xl text-balance text-5xl font-extrabold tracking-tight max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+                                    <h1 className="font-display mx-auto mt-8 max-w-6xl text-balance text-5xl font-extrabold tracking-tight max-md:font-semibold md:text-7xl lg:mt-16 xl:text-8xl 2xl:text-9xl">
                                         <span className="text-md font-inter">Brands </span>
                                         <span className="text-muted-foreground">Grow</span>
                                         <br />
@@ -122,7 +122,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.7}
                                     as="p"
-                                    className="mx-auto mt-4 max-w-2xl text-balance text-base text-muted-foreground">
+                                    className="mx-auto mt-6 max-w-3xl text-balance text-base md:text-lg text-muted-foreground">
                                     We don&apos;t just make brands pretty — we craft smart
                                     design that fuels real business growth.
                                 </TextEffect>
@@ -139,7 +139,7 @@ export default function HeroSection() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    className="mt-14 flex flex-col items-center justify-center gap-3 md:flex-row">
                                     <div
                                         key={1}
                                         className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
