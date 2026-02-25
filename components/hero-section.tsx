@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
+import { Particles } from '@/components/ui/particles'
+import Carousel from './carousel'
 
 const transitionVariants = {
     item: {
@@ -39,8 +41,8 @@ export default function HeroSection() {
                     <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
                     <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
                 </div>
-                <section className="relative h-screen">
-                    <div className="relative flex h-full flex-col items-center justify-center">
+                <section className="relative">
+                    <div className="relative flex min-h-[80vh] flex-col items-center justify-center pt-24 pb-12 sm:min-h-[85vh] sm:pt-28 sm:pb-16 lg:h-screen lg:pt-0 lg:pb-0">
                         <AnimatedGroup
                             variants={{
                                 container: {
@@ -83,6 +85,17 @@ export default function HeroSection() {
                             className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
 
+                        {/* Particles overlay */}
+                        <Particles
+                            className="absolute inset-0 z-[1]"
+                            quantity={150}
+                            ease={80}
+                            color="#ffffff"
+                            size={0.4}
+                            staticity={40}
+                            vy={-0.3}
+                        />
+
                         <div className="mx-auto w-full max-w-[90rem] px-6 lg:px-16 xl:px-24">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
@@ -107,10 +120,23 @@ export default function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="font-display mx-auto mt-8 max-w-6xl text-balance text-5xl font-extrabold tracking-tight max-md:font-semibold md:text-7xl lg:mt-16 xl:text-8xl 2xl:text-9xl">
-                                        <span className="text-md font-inter">Brands </span>
+                                    <h1 className="font-display mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-balance text-4xl font-extrabold tracking-tight max-md:font-semibold sm:gap-x-4 sm:text-5xl md:text-7xl lg:mt-16 xl:text-8xl 2xl:text-9xl">
+                                        <span className="text-md font-inter">Brands</span>
+                                        <div className="relative inline-flex items-center justify-center">
+                                            <div className="scale-75 sm:scale-90 md:scale-100 origin-center">
+                                                <Carousel
+                                                    baseWidth={260}
+                                                    autoplay
+                                                    autoplayDelay={3000}
+                                                    pauseOnHover
+                                                    loop={true}
+                                                    round={false}
+                                                />
+                                            </div>
+                                        </div>
                                         <span className="text-muted-foreground">Grow</span>
-                                        <br />
+                                        <br className="hidden md:block" />
+                                        <div className="w-full basis-full mt-2" />
                                         <span className="text-foreground">Fast </span>
                                         <span className="text-muted-foreground">With us</span>
                                     </h1>
@@ -139,7 +165,7 @@ export default function HeroSection() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-14 flex flex-col items-center justify-center gap-3 md:flex-row">
+                                    className="mt-10 flex flex-col items-center justify-center gap-3 sm:mt-14 md:flex-row">
                                     <div
                                         key={1}
                                         className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
@@ -147,7 +173,7 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="#get-started">
+                                            <Link href="/#contact">
                                                 <span className="text-nowrap">Get Started</span>
                                             </Link>
                                         </Button>
@@ -158,7 +184,7 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
-                                        <Link href="#learn-more">
+                                        <Link href="/#our-work">
                                             <span className="text-nowrap">Learn More</span>
                                         </Link>
                                     </Button>

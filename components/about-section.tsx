@@ -169,7 +169,7 @@ export default function AboutSection() {
             </div>
 
             {/* Main content */}
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto w-full max-w-[90rem] px-6 lg:px-16 xl:px-24">
                 <div className="relative flex items-center justify-center">
                     {/* Left badges — desktop only */}
                     <div className="hidden lg:flex flex-col gap-5 absolute left-0">

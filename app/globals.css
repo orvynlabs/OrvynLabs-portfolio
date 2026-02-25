@@ -50,6 +50,15 @@ html {
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  @keyframes pulse {
+  0%, 100% {
+    boxShadow: 0 0 0 0 var(--pulse-color);
+    }
+  50% {
+    boxShadow: 0 0 0 8px var(--pulse-color);
+    }
+  }
 }
 
 @keyframes fadeInUp {
@@ -269,7 +278,7 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 32px 24px 0;
   align-items: start;
@@ -279,18 +288,24 @@ html {
   .process-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
 @media (max-width: 640px) {
   .process-cards-grid {
     grid-template-columns: 1fr;
-    max-width: 360px;
+    max-width: 100%;
+    padding: 24px 16px 0;
   }
 
   .process-card {
     margin-top: 0 !important;
+  }
+
+  .process-card-inner {
+    padding: 24px 20px 28px;
+    min-height: auto;
   }
 }
 
@@ -388,7 +403,7 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -396,8 +411,9 @@ html {
 @media (max-width: 768px) {
   .cs-grid {
     grid-template-columns: 1fr;
-    max-width: 520px;
-    gap: 40px;
+    max-width: 100%;
+    gap: 32px;
+    padding: 0 16px;
   }
 }
 
@@ -567,7 +583,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 48px;
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px;
   align-items: start;
@@ -576,8 +592,9 @@ html {
 @media (max-width: 768px) {
   .faq-content {
     grid-template-columns: 1fr;
-    max-width: 520px;
-    gap: 40px;
+    max-width: 100%;
+    gap: 32px;
+    padding: 0 16px;
   }
 }
 

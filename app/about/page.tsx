@@ -116,7 +116,7 @@ export default function AboutPage() {
                         <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-white/[0.03] blur-[160px]" />
                     </div>
 
-                    <div className="mx-auto max-w-4xl px-6 text-center">
+                    <div className="mx-auto max-w-6xl px-6 lg:px-16 xl:px-24 text-center">
                         <div className="gsap-fade mb-6">
                             <Link
                                 href="/"
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
                 {/* Our Story Section */}
                 <section className="py-20 md:py-28">
-                    <div className="mx-auto max-w-6xl px-6">
+                    <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
                 {/* What We Stand For + Core Values Section */}
                 <section className="py-20 md:py-28 border-t border-white/[0.06]">
-                    <div className="mx-auto max-w-6xl px-6">
+                    <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         {/* Intro Text */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -282,7 +282,7 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="mx-auto max-w-3xl px-6 text-center"
+                        className="mx-auto max-w-4xl px-6 text-center"
                     >
                         <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
                             Ready to create something amazing?

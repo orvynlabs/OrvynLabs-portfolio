@@ -212,7 +212,7 @@ export default function FaqSection() {
             {/* Centered FAQ accordion */}
             <div
                 style={{
-                    maxWidth: '720px',
+                    maxWidth: '900px',
                     margin: '0 auto',
                     padding: isMobile ? '0 20px' : '0 32px',
                 }}

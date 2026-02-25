@@ -130,7 +130,7 @@ export default function ServicesPage() {
                         <div className="absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-primary/[0.02] blur-[140px]" />
                     </div>
 
-                    <div className="mx-auto max-w-4xl px-6 text-center">
+                    <div className="mx-auto max-w-6xl px-6 lg:px-16 xl:px-24 text-center">
                         <div className="gsap-fade mb-6">
                             <Link
                                 href="/"
@@ -154,7 +154,7 @@ export default function ServicesPage() {
 
                 {/* Services Grid */}
                 <section className="py-20 md:py-28">
-                    <div className="mx-auto max-w-6xl px-6">
+                    <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         <motion.div
                             variants={containerVariants}
                             initial="hidden"
@@ -201,7 +201,7 @@ export default function ServicesPage() {
 
                 {/* Process Section */}
                 <section className="py-20 md:py-28 border-t border-white/[0.06]">
-                    <div className="mx-auto max-w-6xl px-6">
+                    <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +254,7 @@ export default function ServicesPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="mx-auto max-w-3xl px-6 text-center"
+                        className="mx-auto max-w-4xl px-6 text-center"
                     >
                         <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
                             Have a project in mind?
