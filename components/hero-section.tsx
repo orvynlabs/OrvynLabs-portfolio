@@ -7,7 +7,7 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
 import { Particles } from '@/components/ui/particles'
-import Carousel from './carousel'
+
 
 const transitionVariants = {
     item: {
@@ -120,20 +120,8 @@ export default function HeroSection() {
                                 </AnimatedGroup>
 
                                 <AnimatedGroup variants={transitionVariants}>
-                                    <h1 className="font-display mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-balance text-4xl font-extrabold tracking-tight max-md:font-semibold sm:gap-x-4 sm:text-5xl md:text-7xl lg:mt-16 xl:text-8xl 2xl:text-9xl">
+                                    <h1 className="font-display mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-balance text-4xl font-extrabold tracking-tight max-md:font-semibold sm:gap-x-4 sm:text-5xl md:text-6xl lg:mt-16 xl:text-7xl 2xl:text-8xl">
                                         <span className="text-md font-inter">Brands</span>
-                                        <div className="relative inline-flex items-center justify-center">
-                                            <div className="scale-75 sm:scale-90 md:scale-100 origin-center">
-                                                <Carousel
-                                                    baseWidth={260}
-                                                    autoplay
-                                                    autoplayDelay={3000}
-                                                    pauseOnHover
-                                                    loop={true}
-                                                    round={false}
-                                                />
-                                            </div>
-                                        </div>
                                         <span className="text-muted-foreground">Grow</span>
                                         <br className="hidden md:block" />
                                         <div className="w-full basis-full mt-2" />
