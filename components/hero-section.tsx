@@ -42,7 +42,7 @@ export default function HeroSection() {
                     <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
                 </div>
                 <section className="relative">
-                    <div className="relative flex min-h-[80vh] flex-col items-center justify-center pt-24 pb-12 sm:min-h-[85vh] sm:pt-28 sm:pb-16 lg:h-screen lg:pt-0 lg:pb-0">
+                    <div className="relative flex min-h-[50vh] flex-col items-center justify-center pt-24 pb-8 sm:min-h-[85vh] sm:pt-28 sm:pb-16 lg:h-screen lg:pt-0 lg:pb-0">
                         <AnimatedGroup
                             variants={{
                                 container: {
@@ -160,7 +160,7 @@ export default function HeroSection() {
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base">
+                                            className="rounded-xl px-5 text-base w-full sm:w-auto">
                                             <Link href="/#contact">
                                                 <span className="text-nowrap">Get Started</span>
                                             </Link>
@@ -171,7 +171,7 @@ export default function HeroSection() {
                                         asChild
                                         size="lg"
                                         variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
+                                        className="h-10.5 rounded-xl px-5 w-full sm:w-auto">
                                         <Link href="/#our-work">
                                             <span className="text-nowrap">Learn More</span>
                                         </Link>

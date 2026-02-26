@@ -160,38 +160,60 @@ export default function ServicesPage() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: '-60px' }}
-                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative"
                         >
                             {services.map((service) => (
                                 <motion.div
                                     key={service.title}
                                     variants={itemVariants}
-                                    className="group rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/15 hover:bg-white/[0.06]"
+                                    className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 transition-all duration-500 hover:border-white/[0.15] hover:bg-white/[0.04]"
+                                    style={{
+                                        boxShadow: `0 0 0 0 ${service.color}00`,
+                                    }}
+                                    whileHover={{
+                                        boxShadow: `0 20px 40px -20px ${service.color}30`,
+                                        y: -4,
+                                    }}
                                 >
+                                    {/* Hover glow effect */}
                                     <div
-                                        className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl"
-                                        style={{ backgroundColor: `${service.color}20` }}
-                                    >
-                                        <service.icon size={22} style={{ color: service.color }} />
-                                    </div>
+                                        className="absolute -inset-px opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-screen pointer-events-none"
+                                        style={{
+                                            background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${service.color}15, transparent 40%)`
+                                        }}
+                                    />
 
-                                    <h3 className="font-display text-xl font-semibold text-[#f0f0f0] mb-3 tracking-tight">
-                                        {service.title}
-                                    </h3>
+                                    {/* Top decorative gradient line */}
+                                    <div
+                                        className="absolute top-0 left-0 h-[2px] w-0 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-100"
+                                        style={{ color: service.color }}
+                                    />
 
-                                    <p className="text-white/50 leading-relaxed text-sm mb-6">
-                                        {service.description}
-                                    </p>
+                                    <div className="relative z-10">
+                                        <div
+                                            className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 shadow-inner bg-black/40 backdrop-blur-md transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                        >
+                                            <service.icon size={26} style={{ color: service.color }} className="drop-shadow-lg" />
+                                        </div>
 
-                                    <div className="flex flex-wrap gap-2">
-                                        {service.features.map((feature) => (
-                                            <span
-                                                key={feature}
-                                                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/50"
-                                            >
-                                                {feature}
-                                            </span>
-                                        ))}
+                                        <h3 className="font-display text-2xl font-semibold text-[#f0f0f0] mb-4 tracking-tight group-hover:text-white transition-colors duration-300">
+                                            {service.title}
+                                        </h3>
+
+                                        <p className="text-white/60 leading-relaxed text-sm mb-8 line-clamp-3 group-hover:text-white/80 transition-colors duration-300">
+                                            {service.description}
+                                        </p>
+
+                                        <div className="flex flex-wrap gap-2 mt-auto">
+                                            {service.features.map((feature) => (
+                                                <span
+                                                    key={feature}
+                                                    className="rounded-full border border-white/5 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-white/50 transition-all duration-300 group-hover:border-white/10 group-hover:bg-white/[0.06] group-hover:text-white/70"
+                                                >
+                                                    {feature}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}

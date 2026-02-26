@@ -159,7 +159,7 @@ export default function AboutSection() {
         <section
             id="about"
             ref={sectionRef}
-            className="relative py-32 md:py-48"
+            className="relative pt-12 pb-32 md:py-48"
         >
             {/* Hello divider */}
             <div className="flex items-center justify-center gap-4 mb-16">
