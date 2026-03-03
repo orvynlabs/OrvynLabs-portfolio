@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Plus, X } from 'lucide-react'
+import ScrollReveal from './ui/scroll-reveal'
 
 interface FaqItem {
     question: string
@@ -194,19 +195,15 @@ export default function FaqSection() {
                         }}
                     />
                 </div>
-                <h2
-                    style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: isMobile ? '28px' : 'clamp(32px, 5vw, 48px)',
-                        fontWeight: 700,
-                        color: '#f0f0f0',
-                        letterSpacing: '-0.025em',
-                        lineHeight: 1.1,
-                        padding: isMobile ? '0 16px' : '0',
-                    }}
+                <ScrollReveal
+                    baseOpacity={0.1}
+                    enableBlur
+                    baseRotation={3}
+                    blurStrength={4}
+                    textClassName="font-display font-bold text-[#f0f0f0] tracking-[-0.025em] leading-[1.1] text-[28px] md:text-[clamp(32px,5vw,48px)] px-4 md:px-0"
                 >
                     Your Questions, Answered
-                </h2>
+                </ScrollReveal>
             </div>
 
             {/* Centered FAQ accordion */}

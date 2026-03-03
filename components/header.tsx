@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils'
 const menuItems = [
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Our Work', href: '/#our-work' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Our Work', href: '/works' },
+    { name: 'Contact', href: '/contact' },
 ]
 
 export const HeroHeader = () => {
@@ -141,8 +141,8 @@ export const HeroHeader = () => {
                     {/* Desktop CTA */}
                     <div className="relative z-10 hidden items-center gap-3 lg:flex">
                         <Link
-                            href="/#contact"
-                            onClick={(e) => handleHashClick(e, '/#contact')}
+                            href="/contact"
+                            onClick={(e) => handleHashClick(e, '/contact')}
                             className={cn(
                                 'group flex items-center gap-2 rounded-full px-5 py-2 text-[13px] font-semibold transition-all duration-300',
                                 'bg-white text-black hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]'
@@ -249,8 +249,8 @@ export const HeroHeader = () => {
                         {/* Mobile CTA */}
                         <div className="mt-6 border-t border-white/[0.06] pt-6">
                             <Link
-                                href="/#contact"
-                                onClick={(e) => handleHashClick(e, '/#contact')}
+                                href="/contact"
+                                onClick={(e) => handleHashClick(e, '/contact')}
                                 className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-black transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.12)]"
                             >
                                 <span>Get Started</span>

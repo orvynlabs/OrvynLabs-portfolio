@@ -80,7 +80,7 @@ export function GlassWalletCard({
               variant="outline"
               className={cn(
                 "border-border/50 bg-background/50 backdrop-blur-sm",
-                trendUp ? "text-green-500" : "text-red-500"
+                trendUp ? "text-white" : "text-white/40"
               )}
             >
               <TrendingUp className="mr-1 h-3 w-3" />

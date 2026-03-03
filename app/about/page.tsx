@@ -7,12 +7,14 @@ import Link from 'next/link'
 import {
     ArrowLeft,
     Rocket,
-    Crosshair,
-    Code,
-    Users,
-    TrendingUp,
-    Handshake,
-    UserCheck,
+    Layers,
+    Cpu,
+    Zap,
+    Globe,
+    ShieldCheck,
+    BarChart3,
+    ChevronRight,
+    MapPin,
 } from 'lucide-react'
 import { HeroHeader } from '@/components/header'
 import { FooterBlock } from '@/components/uitripled/footer-block-shadcnui'
@@ -21,48 +23,48 @@ gsap.registerPlugin(ScrollTrigger)
 
 const values = [
     {
-        icon: Crosshair,
-        title: 'Problem-First Thinking',
-        description: 'We focus on understanding the real problem before writing a single line of code. Technology is a tool — not the goal.',
-        color: '#F97316',
+        icon: Layers,
+        title: 'Structure First',
+        description: 'We prioritize backend architecture and database normalization. A product is only as strong as its foundation.',
+        color: 'white', // ORVYN Primary Purple
     },
     {
-        icon: Code,
-        title: 'Clean and Scalable Development',
-        description: 'We believe in writing maintainable, efficient code that grows with the product instead of creating technical debt.',
-        color: '#38BDF8',
+        icon: Cpu,
+        title: 'Systems Thinking',
+        description: 'We don’t just build features; we build interconnected systems designed for operational efficiency and scale.',
+        color: 'white',
     },
     {
-        icon: Users,
-        title: 'Collaboration Over Ego',
-        description: 'As a team of four developers, teamwork and shared responsibility are at the heart of everything we do.',
-        color: '#4ADE80',
+        icon: Zap,
+        title: 'Rapid Iteration',
+        description: 'The "LABS" in our name stands for experimentation. We build MVPs fast, test with real data, and refine relentlessly.',
+        color: 'white',
     },
     {
-        icon: TrendingUp,
-        title: 'Continuous Learning',
-        description: 'Technology evolves fast, and so do we. We constantly learn, adapt, and improve our skills and processes.',
-        color: '#FACC15',
+        icon: ShieldCheck,
+        title: 'Production-Ready Security',
+        description: 'From JWT/OAuth to secure financial integrations, we ensure your startup is protected from day one.',
+        color: 'white',
     },
     {
-        icon: Handshake,
-        title: 'Transparency and Trust',
-        description: 'We communicate openly with clients and within our team, ensuring clarity, honesty, and reliability in every project.',
-        color: '#A78BFA',
+        icon: BarChart3,
+        title: 'Growth-Centric Logic',
+        description: 'We integrate technical SEO, funnel thinking, and analytics into the core of every MERN application.',
+        color: 'white',
     },
     {
-        icon: UserCheck,
-        title: 'User-Centered Design',
-        description: 'Great software is built for people. We prioritize usability, performance, and real user experience.',
-        color: '#F472B6',
+        icon: Globe,
+        title: 'Global Scalability',
+        description: 'Our code is built to move from local MVPs to international SaaS platforms without massive technical debt.',
+        color: 'white',
     },
 ]
 
 const stats = [
-    { number: '50+', label: 'Projects Delivered' },
-    { number: '30+', label: 'Happy Clients' },
-    { number: '3+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' },
+    { number: 'MERN', label: 'Core Stack' },
+    { number: '4', label: 'Specialists' },
+    { number: 'Calicut', label: 'Origin' },
+    { number: 'MVP', label: 'Focused' },
 ]
 
 const containerVariants = {
@@ -113,7 +115,7 @@ export default function AboutPage() {
                 {/* Hero Section */}
                 <section ref={heroRef} className="relative pt-32 pb-12 md:pt-44 md:pb-16">
                     <div className="pointer-events-none absolute inset-0 -z-10">
-                        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-white/[0.03] blur-[160px]" />
+                        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[white]/[0.05] blur-[160px]" />
                     </div>
 
                     <div className="mx-auto max-w-6xl px-6 lg:px-16 xl:px-24 text-center">
@@ -128,17 +130,17 @@ export default function AboutPage() {
                         </div>
 
                         <h1 className="gsap-fade font-display text-5xl md:text-7xl font-extrabold tracking-tight text-[#f0f0f0] mb-6">
-                            About <span className="text-white/40">Us</span>
+                            Built on <span className="text-[white]">Structure</span>. <br />
+                            <span className="text-white/40 text-4xl md:text-6xl">Designed to Scale.</span>
                         </h1>
 
                         <p className="gsap-fade mx-auto max-w-2xl text-lg text-white/50 leading-relaxed">
-                            Four full-stack developers united by curiosity, discipline, and a
-                            shared mission to build technology that makes a real impact.
+                            ORVYN LABS is a digital product and growth studio. We partner with early-stage founders to turn ambitious ideas into structured, high-performance digital systems.
                         </p>
                     </div>
                 </section>
 
-                {/* Our Story Section */}
+                {/* The Story/Philosophy Section */}
                 <section className="py-20 md:py-28">
                     <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         <motion.div
@@ -150,45 +152,32 @@ export default function AboutPage() {
                         >
                             <div>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="h-px w-12 bg-white/15" />
-                                    <span className="font-display text-sm italic text-white/50 tracking-wide">Our Story</span>
+                                    <div className="h-px w-12 bg-[white]/30" />
+                                    <span className="font-display text-sm italic text-[white] tracking-wide uppercase font-bold">The Journey</span>
                                 </div>
                                 <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
-                                    Our Story
+                                    From Calicut to <br />Global Products.
                                 </h2>
                                 <div className="space-y-4 text-white/50 leading-relaxed">
                                     <p>
-                                        Our journey began during our college days, where four passionate students shared
-                                        more than just classrooms — we shared a curiosity for technology and a drive to
-                                        build meaningful digital solutions. While studying software development, we
-                                        realized that many businesses struggled with outdated systems, poor user
-                                        experiences, and inefficient workflows. That realization sparked an idea: instead
-                                        of just learning development, why not use our skills to solve real-world problems?
+                                        Our story began in Calicut. Shortly after completing our BCA degrees, four developers united by a shared obsession for clean code and systems thinking decided to move beyond the traditional "agency" model.
                                     </p>
                                     <p>
-                                        What started as late-night discussions, small projects, and continuous
-                                        experimentation slowly evolved into something bigger. As full-stack developers,
-                                        we explored both frontend and backend technologies, focusing on creating complete,
-                                        scalable solutions rather than isolated features. Every project became a learning
-                                        opportunity, shaping our approach to clean code, performance, and user-focused
-                                        design.
+                                        We realized that many founders weren't just looking for websites; they needed <strong>infrastructure</strong>. They needed systems that could handle users, secure payments, and scale without breaking. 
                                     </p>
                                     <p>
-                                        After gaining experience through collaborative projects and real-world challenges,
-                                        we decided to turn our shared vision into a professional journey. We built our
-                                        company on the belief that strong teamwork, practical problem-solving, and
-                                        continuous learning lead to better products and better results for clients.
+                                        Today, <strong>ORVYN LABS</strong> is a specialized 4-member team. We operate at the intersection of product engineering and growth strategy, using the <strong>MERN stack</strong> to build high-stakes digital products.
                                     </p>
-                                    <p>
-                                        Today, we remain a team of four dedicated full-stack developers who value
-                                        simplicity, efficiency, and innovation. Our goal is not just to build software,
-                                        but to create solutions that help businesses grow, adapt, and succeed in a rapidly
-                                        changing digital world.
-                                    </p>
-                                    <p className="italic text-white/60 font-medium">
-                                        From college ideas to real-world impact — this is our story, and we are just
-                                        getting started.
-                                    </p>
+                                    <div className="pt-4 flex flex-col gap-3">
+                                        <p className="italic text-white/60 font-medium flex items-center gap-2">
+                                            <ChevronRight size={16} className="text-[white]" /> 
+                                            No messy development. Only structured systems.
+                                        </p>
+                                        <p className="text-sm flex items-center gap-2 text-white/30 font-display">
+                                            <MapPin size={14} className="text-[white]" />
+                                            Rooted in Calicut, Kerala. Scaling Worldwide.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -201,12 +190,12 @@ export default function AboutPage() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1, duration: 0.5 }}
-                                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm"
+                                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm group hover:border-[white]/50 transition-colors"
                                     >
-                                        <span className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0]">
+                                        <span className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] group-hover:text-[white] transition-colors">
                                             {stat.number}
                                         </span>
-                                        <p className="mt-2 text-sm text-white/50">{stat.label}</p>
+                                        <p className="mt-2 text-sm text-white/50 uppercase tracking-widest font-semibold">{stat.label}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -214,10 +203,9 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* What We Stand For + Core Values Section */}
+                {/* Core Values Section */}
                 <section className="py-20 md:py-28 border-t border-white/[0.06]">
                     <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
-                        {/* Intro Text */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -227,23 +215,17 @@ export default function AboutPage() {
                         >
                             <div className="flex items-center justify-center gap-4 mb-4">
                                 <div className="h-px w-12 bg-white/15" />
-                                <span className="font-display text-sm italic text-white/50 tracking-wide">What We Stand For</span>
+                                <span className="font-display text-sm italic text-white/50 tracking-wide">The ORVYN Blueprint</span>
                                 <div className="h-px w-12 bg-white/15" />
                             </div>
                             <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
-                                Our Core Values
+                                Why Founders Trust Us
                             </h2>
                             <p className="mx-auto max-w-3xl text-white/50 leading-relaxed">
-                                We believe technology should be practical, purposeful, and built with intention.
-                                As a team of full-stack developers, our focus is on creating solutions that are
-                                not only functional but scalable, maintainable, and user-focused. We value clear
-                                communication, continuous improvement, and delivering real outcomes rather than
-                                unnecessary complexity. Every project we take on reflects our commitment to
-                                craftsmanship, collaboration, and long-term impact.
+                                We help startups avoid technical debt by building clean, maintainable, and performance-optimized products. Our commitment is to craftsmanship over fast hacks.
                             </p>
                         </motion.div>
 
-                        {/* Values Grid */}
                         <motion.div
                             variants={containerVariants}
                             initial="hidden"
@@ -255,10 +237,10 @@ export default function AboutPage() {
                                 <motion.div
                                     key={value.title}
                                     variants={itemVariants}
-                                    className="group rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/15 hover:bg-white/[0.06]"
+                                    className="group rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition-all duration-300 hover:border-[white]/40 hover:bg-white/[0.06]"
                                 >
                                     <div
-                                        className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl"
+                                        className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
                                         style={{ backgroundColor: `${value.color}20` }}
                                     >
                                         <value.icon size={22} style={{ color: value.color }} />
@@ -284,17 +266,17 @@ export default function AboutPage() {
                         transition={{ duration: 0.5 }}
                         className="mx-auto max-w-4xl px-6 text-center"
                     >
-                        <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
-                            Ready to create something amazing?
+                        <h2 className="font-display text-3xl md:text-5xl font-bold text-[#f0f0f0] tracking-tight mb-6">
+                            Ready to build for the next generation?
                         </h2>
                         <p className="text-white/50 mb-10 text-lg">
-                            Let&apos;s turn your vision into reality. Reach out and let&apos;s start the conversation.
+                            Whether you need a scalable MVP or a complex SaaS system, let’s design it to last.
                         </p>
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center gap-3 rounded-full bg-[#f0f0f0] px-8 py-4 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-white hover:-translate-y-0.5"
+                            className="inline-flex items-center gap-3 rounded-full bg-[white] px-10 py-4 text-sm font-semibold text-white transition-all hover:bg-[#e5e5e5] hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                         >
-                            Get in Touch
+                            Start Your Build
                             <Rocket size={16} />
                         </Link>
                     </motion.div>

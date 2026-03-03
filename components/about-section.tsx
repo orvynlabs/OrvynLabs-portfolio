@@ -1,13 +1,16 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { SplitText } from 'gsap/SplitText'
-import { LayoutGrid, Box, Search, RefreshCw, Palette, Puzzle } from 'lucide-react'
+import {
+    Cpu,
+    Database,
+    Code2,
+    Zap,
+    ShieldCheck,
+    Terminal
+} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-
-gsap.registerPlugin(ScrollTrigger, SplitText)
+import ScrollReveal from './ui/scroll-reveal'
 
 interface ServiceItem {
     icon: LucideIcon
@@ -17,50 +20,51 @@ interface ServiceItem {
     rotation: number
 }
 
+// --- UPDATED: Systems-First Service Badges for ORVYN LABS ---
 const services: { left: ServiceItem[]; right: ServiceItem[] } = {
     left: [
         {
-            icon: LayoutGrid,
-            label: 'Design systems',
-            bgColor: '#F97316',
-            iconColor: '#FFFFFF',
+            icon: Terminal,
+            label: 'MERN Stack',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: -3,
         },
         {
-            icon: Box,
-            label: 'UX Design',
-            bgColor: '#1C1C1E',
-            iconColor: '#4ADE80',
+            icon: Database,
+            label: 'Scalable DB',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: 2,
         },
         {
-            icon: Search,
-            label: 'Research',
-            bgColor: '#38BDF8',
-            iconColor: '#FFFFFF',
+            icon: Cpu,
+            label: 'Architecture',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: -1,
         },
     ],
     right: [
         {
-            icon: RefreshCw,
-            label: 'Animation',
-            bgColor: '#4ADE80',
-            iconColor: '#FFFFFF',
+            icon: Zap,
+            label: 'MVP Builds',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: 2,
         },
         {
-            icon: Palette,
-            label: 'Branding',
-            bgColor: '#F472B6',
-            iconColor: '#FFFFFF',
+            icon: Code2,
+            label: 'Clean Code',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: -2,
         },
         {
-            icon: Puzzle,
-            label: 'Strategy',
-            bgColor: '#FACC15',
-            iconColor: '#FFFFFF',
+            icon: ShieldCheck,
+            label: 'SaaS Logic',
+            bgColor: '#ffffff',
+            iconColor: '#0a0a0a',
             rotation: 3,
         },
     ],
@@ -77,24 +81,24 @@ function ServiceBadge({
 }: ServiceItem & { delay: number }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20, rotate: 0 }}
-            whileInView={{ opacity: 1, y: 0, rotate: rotation }}
+            initial={{ opacity: 0, x: delay < 0.2 ? -20 : 20, rotate: 0 }}
+            whileInView={{ opacity: 1, x: 0, rotate: rotation }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-            className="service-badge"
+            transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+            className="service-badge flex items-center gap-3 bg-white/[0.03] border border-white/10 px-4 py-2 rounded-full backdrop-blur-md"
         >
             <div
-                className="service-badge-icon"
+                className="service-badge-icon flex items-center justify-center w-8 h-8 rounded-full"
                 style={{ backgroundColor: bgColor }}
             >
-                <Icon size={16} color={iconColor} strokeWidth={2.5} />
+                <Icon size={14} color={iconColor} strokeWidth={2.5} />
             </div>
-            <span className="service-badge-label">{label}</span>
+            <span className="service-badge-label text-white/70 text-sm font-medium tracking-tight whitespace-nowrap">{label}</span>
         </motion.div>
     )
 }
 
-/* Mobile badge — static (no individual animation, parent handles it) */
+/* Mobile badge — static parent handles animation */
 function MobileServiceBadge({
     icon: Icon,
     label,
@@ -102,115 +106,85 @@ function MobileServiceBadge({
     iconColor,
 }: ServiceItem) {
     return (
-        <div className="service-badge">
+        <div className="service-badge flex items-center gap-2 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full">
             <div
-                className="service-badge-icon"
+                className="service-badge-icon flex items-center justify-center w-6 h-6 rounded-full"
                 style={{ backgroundColor: bgColor }}
             >
-                <Icon size={16} color={iconColor} strokeWidth={2.5} />
+                <Icon size={12} color={iconColor} strokeWidth={2.5} />
             </div>
-            <span className="service-badge-label">{label}</span>
+            <span className="service-badge-label text-white/60 text-xs font-medium">{label}</span>
         </div>
     )
 }
 
 export default function AboutSection() {
-    const textRef = useRef<HTMLParagraphElement>(null)
     const sectionRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        if (!textRef.current || !sectionRef.current) return
-
-        let split: SplitText | null = null
-        let ctx: gsap.Context | null = null
-
-        // Defer to next frame so the DOM is fully laid out before measuring lines
-        const raf = requestAnimationFrame(() => {
-            ctx = gsap.context(() => {
-                // Split the paragraph into lines
-                split = new SplitText(textRef.current!, { type: 'lines' })
-
-                // Animate each line's backgroundPositionX on scroll
-                split.lines.forEach((line) => {
-                    gsap.to(line, {
-                        backgroundPositionX: 0,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: line,
-                            scrub: 1,
-                            start: 'top 80%',
-                            end: 'bottom center',
-                        },
-                    })
-                })
-
-                // Recalculate all trigger positions after split
-                ScrollTrigger.refresh()
-            }, sectionRef.current!)
-        })
-
-        return () => {
-            cancelAnimationFrame(raf)
-            if (ctx) ctx.revert()
-        }
-    }, [])
 
     return (
         <section
             id="about"
             ref={sectionRef}
-            className="relative pt-12 pb-32 md:py-48"
+            className="relative pt-12 pb-32 md:py-48 overflow-hidden"
         >
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] blur-[120px] pointer-events-none" />
+
             {/* Hello divider */}
             <div className="flex items-center justify-center gap-4 mb-16">
-                <div className="h-px w-16 bg-border" />
-                <span className="font-display text-sm italic text-muted-foreground tracking-wide">Hello!</span>
-                <div className="h-px w-16 bg-border" />
+                <div className="h-px w-16 bg-white/10" />
+                <span className="font-display text-sm italic text-white/40 tracking-wide uppercase font-bold">The Labs Blueprint</span>
+                <div className="h-px w-16 bg-white/10" />
             </div>
 
             {/* Main content */}
             <div className="mx-auto w-full max-w-[90rem] px-6 lg:px-16 xl:px-24">
-                <div className="relative flex items-center justify-center">
+                <div className="relative flex items-center justify-center min-h-[300px]">
+
                     {/* Left badges — desktop only */}
-                    <div className="hidden lg:flex flex-col gap-5 absolute left-0">
+                    <div className="hidden lg:flex flex-col gap-6 absolute left-0">
                         {services.left.map((service, i) => (
                             <ServiceBadge
                                 key={service.label}
                                 {...service}
-                                delay={i * 0.15}
+                                delay={i * 0.1}
                             />
                         ))}
                     </div>
 
-                    {/* Center text — same scroll reveal on all screens */}
-                    <div className="flex items-center justify-center px-4 lg:px-32">
-                        <p
-                            ref={textRef}
-                            className="gsap-text-reveal font-display text-3xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tight text-center max-w-3xl"
+                    {/* Center text */}
+                    <div className="flex items-center justify-center px-4 lg:px-48 z-10">
+                        <ScrollReveal
+                            baseOpacity={0.1}
+                            enableBlur
+                            baseRotation={2}
+                            blurStrength={4}
+                            containerClassName="max-w-4xl mx-auto"
+                            textClassName="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-center text-white"
                         >
                             We help brands grow with standout design, clear branding, and content that drives results.
-                        </p>
+                        </ScrollReveal>
                     </div>
 
                     {/* Right badges — desktop only */}
-                    <div className="hidden lg:flex flex-col gap-5 absolute right-0 items-end">
+                    <div className="hidden lg:flex flex-col gap-6 absolute right-0 items-end">
                         {services.right.map((service, i) => (
                             <ServiceBadge
                                 key={service.label}
                                 {...service}
-                                delay={i * 0.15 + 0.2}
+                                delay={i * 0.1 + 0.3}
                             />
                         ))}
                     </div>
                 </div>
 
-                {/* Mobile badges — single group fade-in (one effect) */}
+                {/* Mobile badges */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-wrap justify-center gap-3 mt-12 lg:hidden"
+                    className="flex flex-wrap justify-center gap-3 mt-16 lg:hidden"
                 >
                     {[...services.left, ...services.right].map((service) => (
                         <MobileServiceBadge

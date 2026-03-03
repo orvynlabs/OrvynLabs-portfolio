@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { ProjectCard } from './project-card'
+import ScrollReveal from './ui/scroll-reveal'
 
 interface Project {
     name: string
@@ -46,20 +47,28 @@ const projects: Project[] = [
 
 export default function CaseStudiesSection() {
     return (
-        <section id="our-work" className="cs-section py-24">
+        <section id="our-work" className="cs-section py-24 bg-[#000000]">
             {/* Header */}
             <div className="cs-header mb-16 text-center">
                 <div className="cs-subtitle-row inline-flex items-center justify-center gap-4 mb-4">
-                    <span className="cs-subtitle-line w-12 h-px bg-primary/20" />
-                    <p className="cs-subtitle text-sm uppercase tracking-wider text-muted-foreground">Our Projects</p>
-                    <span className="cs-subtitle-line w-12 h-px bg-primary/20" />
+                    <span className="cs-subtitle-line w-12 h-px bg-white/20" />
+                    <p className="cs-subtitle text-sm uppercase tracking-wider text-gray-400">Our Projects</p>
+                    <span className="cs-subtitle-line w-12 h-px bg-white/20" />
                 </div>
-                <h2 className="cs-title text-4xl md:text-5xl font-bold tracking-tight">Recent Case Studies</h2>
+                <ScrollReveal
+                    baseOpacity={0.1}
+                    enableBlur
+                    baseRotation={3}
+                    blurStrength={4}
+                    textClassName="cs-title text-4xl md:text-5xl font-bold tracking-tight text-white"
+                >
+                    Recent Case Studies
+                </ScrollReveal>
             </div>
 
             {/* Grid */}
-            <div className="mx-auto w-full max-w-7xl px-6 lg:px-16 xl:px-24">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+            <div className="mx-auto w-full max-w-7xl px-6 lg:px-12 xl:px-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.name}

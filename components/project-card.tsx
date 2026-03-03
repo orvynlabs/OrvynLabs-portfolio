@@ -37,67 +37,34 @@ export function ProjectCard({
     className,
 }: ProjectCardProps) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className={cn("w-full max-w-[400px]", className)}
+        <a
+            href={links?.demo || links?.github || '#'}
+            className={cn("block w-full group", className)}
         >
-            <Card className="group relative h-full overflow-hidden rounded-2xl border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
-                <div className="relative aspect-video overflow-hidden">
-                    <motion.img
+            <div className="flex flex-col h-full overflow-hidden rounded-[24px] border border-white/10 bg-[#060606] transition-opacity hover:opacity-80 p-3">
+                <div className="relative aspect-video overflow-hidden rounded-[16px]">
+                    <img
                         src={image}
                         alt={title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                        {links?.demo && (
-                            <motion.a
-                                href={links.demo}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 backdrop-blur-md"
-                                title="View Demo"
-                            >
-                                <ExternalLink className="h-5 w-5" />
-                            </motion.a>
-                        )}
-                        {links?.github && (
-                            <motion.a
-                                href={links.github}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground shadow-lg backdrop-blur-md"
-                                title="View Code"
-                            >
-                                <Github className="h-5 w-5" />
-                            </motion.a>
-                        )}
-                    </div>
                 </div>
 
-                <div className="p-5">
-                    <h3 className="mb-2 text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
+                <div className="p-4 pt-5 pb-2">
+                    <h3 className="mb-1 text-[17px] font-medium tracking-tight text-white">
                         {title}
                     </h3>
-                    <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">
-                        {description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5 text-sm text-gray-400 font-sans">
+                        <span className="opacity-70">Using</span>
                         {tags?.map((tag, index) => (
-                            <Badge
-                                key={index}
-                                variant="secondary"
-                                className="bg-secondary/50 px-2 py-0.5 text-xs font-normal hover:bg-secondary"
-                            >
+                            <span key={index}>
+                                {index > 0 && <span className="mx-1">•</span>}
                                 {tag}
-                            </Badge>
+                            </span>
                         ))}
                     </div>
                 </div>
-            </Card>
-        </motion.div>
+            </div>
+        </a>
     );
 }

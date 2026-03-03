@@ -58,7 +58,7 @@ export function GlassWalletCard({
                     <div className="flex items-start justify-between">
                         <div className="flex items-center gap-3">
                             <div className="glass-wallet-icon flex h-10 w-10 items-center justify-center rounded-full">
-                                <Wallet className="h-5 w-5 text-[#e5e5e5]" />
+                                <Wallet className="h-5 w-5 text-white" />
                             </div>
                             <div>
                                 <p className="text-xs font-medium text-[rgba(255,255,255,0.45)]">
@@ -78,7 +78,7 @@ export function GlassWalletCard({
                             variant="outline"
                             className={cn(
                                 "glass-wallet-badge border-white/10 backdrop-blur-sm",
-                                trendUp ? "text-emerald-400" : "text-red-400"
+                                trendUp ? "text-white" : "text-white/40"
                             )}
                         >
                             <TrendingUp className="mr-1 h-3 w-3" />

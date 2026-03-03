@@ -6,14 +6,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import {
     ArrowLeft,
-    Palette,
-    Code,
-    PenTool,
-    BarChart3,
-    Megaphone,
-    Globe,
-    ArrowRight,
     Rocket,
+    Code2,
+    Layers,
+    Layout,
+    ShieldCheck,
+    Database,
+    Zap,
+    ArrowRight,
+    Terminal,
+    Server,
+    Smartphone,
 } from 'lucide-react'
 import { HeroHeader } from '@/components/header'
 import { FooterBlock } from '@/components/uitripled/footer-block-shadcnui'
@@ -22,60 +25,67 @@ gsap.registerPlugin(ScrollTrigger)
 
 const services = [
     {
-        icon: Palette,
-        title: 'Brand Identity',
+        icon: Layers,
+        title: 'Full-Stack Web Engineering',
         description:
-            'We craft cohesive brand identities that tell your story and make a lasting impression. From logos to full visual systems, we build brands that resonate.',
-        features: ['Logo Design', 'Color Systems', 'Typography', 'Brand Guidelines'],
-        color: '#F97316',
+            'End-to-end MERN stack applications built for performance. We focus on role-based access control, secure authentication, and seamless user flows.',
+        features: ['React / Next.js', 'Node.js & Express', 'JWT / OAuth 2.0', 'Complex Admin Panels'],
+        color: 'white', // ORVYN Purple
     },
     {
-        icon: PenTool,
-        title: 'UI/UX Design',
+        icon: Zap,
+        title: 'MVP Development',
         description:
-            'User-centered design that balances beauty with function. We create intuitive interfaces that delight users and drive engagement.',
-        features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-        color: '#38BDF8',
+            'Rapid development for early-stage founders. We turn your product idea into a structured, launch-ready MVP without technical debt.',
+        features: ['Rapid Prototyping', 'Core Feature Scoping', 'Scalable Foundation', 'Idea Validation'],
+        color: 'white',
     },
     {
-        icon: Code,
-        title: 'Web Development',
+        icon: Database,
+        title: 'SaaS Architecture',
         description:
-            'High-performance websites and web applications built with modern technologies. Fast, responsive, and designed to scale.',
-        features: ['React / Next.js', 'Full-Stack Apps', 'API Development', 'Performance'],
-        color: '#4ADE80',
+            'Advanced systems design for multi-tenant platforms. We specialize in database normalization and scalable cloud infrastructure.',
+        features: ['Multi-tenant DB Design', 'API Orchestration', 'Micro-services', 'Performance Tuning'],
+        color: 'white',
     },
     {
-        icon: Megaphone,
-        title: 'Content Strategy',
+        icon: Layout,
+        title: 'UI/UX & Glassmorphism',
         description:
-            'Strategic content that connects with your audience and drives action. We help you say the right things in the right places.',
-        features: ['Content Planning', 'Copywriting', 'SEO Strategy', 'Social Media'],
-        color: '#F472B6',
+            'Modern, technical aesthetics meet functional design. We create high-fidelity dashboards and interfaces using our signature glassmorphic style.',
+        features: ['Figma-to-React', 'Dashboard UX', 'Responsive Design', 'Interactive Prototypes'],
+        color: 'white',
     },
     {
-        icon: BarChart3,
-        title: 'Growth & Analytics',
+        icon: ShieldCheck,
+        title: 'Security & Optimization',
         description:
-            'Data-driven insights that fuel your growth. We track, analyze, and optimize to ensure your digital presence delivers results.',
-        features: ['Analytics Setup', 'A/B Testing', 'Conversion Optimization', 'Reporting'],
-        color: '#FACC15',
+            'Ensuring your system is production-ready. We handle security audits, SEO optimization, and financial integration (Razorpay/Stripe).',
+        features: ['Security Hardening', 'SEO Engineering', 'Payment Gateways', 'Wallet Systems'],
+        color: 'white',
     },
     {
-        icon: Globe,
-        title: 'Digital Strategy',
+        icon: Rocket,
+        title: 'Growth Engineering',
         description:
-            'Comprehensive digital strategies aligned with your business goals. We map out the path from where you are to where you want to be.',
-        features: ['Market Research', 'Competitor Analysis', 'Roadmapping', 'Launch Planning'],
-        color: '#A78BFA',
+            'Building the systems that help you scale. We integrate referral systems, coupon logic, and analytics funnels into your core code.',
+        features: ['Referral Systems', 'Marketing Tech', 'Data Analytics', 'Conversion Funnels'],
+        color: 'white',
     },
 ]
 
 const processSteps = [
-    { step: '01', title: 'Discover', desc: 'We learn about your brand, goals, and audience through in-depth research.' },
-    { step: '02', title: 'Strategize', desc: 'We create a tailored roadmap and plan aligned with your objectives.' },
-    { step: '03', title: 'Design & Build', desc: 'Our team brings the vision to life with meticulous craft and modern tech.' },
-    { step: '04', title: 'Launch & Grow', desc: 'We launch, measure, and continuously optimize for maximum impact.' },
+    { step: '01', title: 'System Mapping', desc: 'We map out the architecture, user roles, and database schema before a single line of code is written.' },
+    { step: '02', title: 'Agile Engineering', desc: 'Sprints focused on core logic, using clean MERN patterns to build a production-ready foundation.' },
+    { step: '03', title: 'Structured Testing', desc: 'Rigorous testing of security, performance, and API stability to ensure the system is bulletproof.' },
+    { step: '04', title: 'Launch & Scale', desc: 'Deploying your product and setting up the infrastructure needed to support your first 10,000 users.' },
+]
+
+const techStack = [
+    { icon: Terminal, name: 'Next.js / React' },
+    { icon: Server, name: 'Node.js / Express' },
+    { icon: Database, name: 'MongoDB / SQL' },
+    { icon: Smartphone, name: 'Tailwind / Framer' },
 ]
 
 const containerVariants = {
@@ -126,8 +136,8 @@ export default function ServicesPage() {
                 {/* Hero Section */}
                 <section ref={heroRef} className="relative pt-32 pb-20 md:pt-44 md:pb-28">
                     <div className="pointer-events-none absolute inset-0 -z-10">
-                        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-white/[0.03] blur-[160px]" />
-                        <div className="absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-primary/[0.02] blur-[140px]" />
+                        <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[white]/[0.05] blur-[160px]" />
+                        <div className="absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-[white]/[0.02] blur-[140px]" />
                     </div>
 
                     <div className="mx-auto max-w-6xl px-6 lg:px-16 xl:px-24 text-center">
@@ -142,12 +152,11 @@ export default function ServicesPage() {
                         </div>
 
                         <h1 className="gsap-fade font-display text-5xl md:text-7xl font-extrabold tracking-tight text-[#f0f0f0] mb-6">
-                            Our <span className="text-white/40">Services</span>
+                            Architecting <br /><span className="text-[white]">Digital Systems.</span>
                         </h1>
 
                         <p className="gsap-fade mx-auto max-w-2xl text-lg text-white/50 leading-relaxed">
-                            End-to-end creative and technical solutions to elevate your brand,
-                            engage your audience, and accelerate your growth.
+                            From rapid MVP engineering to complex SaaS architecture, we build the technical foundations that allow startups to scale without technical debt.
                         </p>
                     </div>
                 </section>
@@ -166,32 +175,11 @@ export default function ServicesPage() {
                                 <motion.div
                                     key={service.title}
                                     variants={itemVariants}
-                                    className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 transition-all duration-500 hover:border-white/[0.15] hover:bg-white/[0.04]"
-                                    style={{
-                                        boxShadow: `0 0 0 0 ${service.color}00`,
-                                    }}
-                                    whileHover={{
-                                        boxShadow: `0 20px 40px -20px ${service.color}30`,
-                                        y: -4,
-                                    }}
+                                    className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 transition-all duration-500 hover:border-[white]/40 hover:bg-white/[0.04]"
                                 >
-                                    {/* Hover glow effect */}
-                                    <div
-                                        className="absolute -inset-px opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-screen pointer-events-none"
-                                        style={{
-                                            background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), ${service.color}15, transparent 40%)`
-                                        }}
-                                    />
-
-                                    {/* Top decorative gradient line */}
-                                    <div
-                                        className="absolute top-0 left-0 h-[2px] w-0 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-100"
-                                        style={{ color: service.color }}
-                                    />
-
                                     <div className="relative z-10">
                                         <div
-                                            className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 shadow-inner bg-black/40 backdrop-blur-md transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                                            className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 shadow-inner bg-black/40 backdrop-blur-md transition-transform duration-500 group-hover:scale-110"
                                         >
                                             <service.icon size={26} style={{ color: service.color }} className="drop-shadow-lg" />
                                         </div>
@@ -208,7 +196,7 @@ export default function ServicesPage() {
                                             {service.features.map((feature) => (
                                                 <span
                                                     key={feature}
-                                                    className="rounded-full border border-white/5 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-white/50 transition-all duration-300 group-hover:border-white/10 group-hover:bg-white/[0.06] group-hover:text-white/70"
+                                                    className="rounded-full border border-white/5 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-white/50 transition-all duration-300 group-hover:border-[white]/30 group-hover:bg-[white]/10 group-hover:text-white/70"
                                                 >
                                                     {feature}
                                                 </span>
@@ -221,8 +209,20 @@ export default function ServicesPage() {
                     </div>
                 </section>
 
+                {/* Tech Stack Marquee (New Section) */}
+                <section className="py-12 border-y border-white/[0.06] bg-white/[0.01]">
+                    <div className="mx-auto max-w-6xl px-6 flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-40 hover:opacity-100 transition-opacity">
+                        {techStack.map((tech) => (
+                            <div key={tech.name} className="flex items-center gap-3 text-white font-display uppercase tracking-widest text-xs font-bold">
+                                <tech.icon size={18} className="text-[white]" />
+                                {tech.name}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
                 {/* Process Section */}
-                <section className="py-20 md:py-28 border-t border-white/[0.06]">
+                <section className="py-20 md:py-28">
                     <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -232,12 +232,12 @@ export default function ServicesPage() {
                             className="text-center mb-16"
                         >
                             <div className="flex items-center justify-center gap-4 mb-4">
-                                <div className="h-px w-12 bg-white/15" />
-                                <span className="font-display text-sm italic text-white/50 tracking-wide">How We Work</span>
-                                <div className="h-px w-12 bg-white/15" />
+                                <div className="h-px w-12 bg-[white]/30" />
+                                <span className="font-display text-sm italic text-[white] tracking-wide font-bold uppercase">The Blueprint</span>
+                                <div className="h-px w-12 bg-[white]/30" />
                             </div>
                             <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight">
-                                Our Process
+                                Our Build Process
                             </h2>
                         </motion.div>
 
@@ -252,9 +252,9 @@ export default function ServicesPage() {
                                 <motion.div
                                     key={item.step}
                                     variants={itemVariants}
-                                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm"
+                                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm group hover:border-[white]/30 transition-all"
                                 >
-                                    <span className="font-display text-4xl font-bold text-white/10 mb-4 block">
+                                    <span className="font-display text-4xl font-bold text-[white]/10 mb-4 block group-hover:text-[white]/30 transition-colors">
                                         {item.step}
                                     </span>
                                     <h3 className="font-display text-lg font-semibold text-[#f0f0f0] mb-2 tracking-tight">
@@ -278,25 +278,25 @@ export default function ServicesPage() {
                         transition={{ duration: 0.5 }}
                         className="mx-auto max-w-4xl px-6 text-center"
                     >
-                        <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
-                            Have a project in mind?
+                        <h2 className="font-display text-3xl md:text-5xl font-bold text-[#f0f0f0] tracking-tight mb-6">
+                            Ready to ship your system?
                         </h2>
                         <p className="text-white/50 mb-10 text-lg">
-                            Let&apos;s discuss how we can help bring your vision to life with our expertise.
+                            We don't build one-off pages. We build growth-ready digital infrastructure.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/#contact"
-                                className="inline-flex items-center gap-3 rounded-full bg-[#f0f0f0] px-8 py-4 text-sm font-semibold text-[#0a0a0a] transition-all hover:bg-white hover:-translate-y-0.5"
+                                className="inline-flex items-center gap-3 rounded-full bg-[white] px-10 py-4 text-sm font-semibold text-white transition-all hover:bg-[#e5e5e5] hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                             >
-                                Start a Project
+                                Start Your MVP
                                 <Rocket size={16} />
                             </Link>
                             <Link
                                 href="/#our-work"
-                                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-8 py-4 text-sm font-medium text-white/70 transition-all hover:border-white/25 hover:text-white/90"
+                                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-10 py-4 text-sm font-medium text-white/70 transition-all hover:border-white/25 hover:text-white/90"
                             >
-                                View Our Work
+                                View Case Studies
                                 <ArrowRight size={14} />
                             </Link>
                         </div>
