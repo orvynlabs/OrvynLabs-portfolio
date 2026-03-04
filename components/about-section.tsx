@@ -160,9 +160,9 @@ export default function AboutSection() {
                             baseRotation={2}
                             blurStrength={4}
                             containerClassName="max-w-4xl mx-auto"
-                            textClassName="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-center text-white"
+                            textClassName="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.25] tracking-tight text-center text-white"
                         >
-                            We help brands grow with standout design, clear branding, and content that drives results.
+                            A premium product studio engineering scalable systems for the next generation of startups.
                         </ScrollReveal>
                     </div>
 

@@ -5,6 +5,9 @@ import { Logo } from '@/components/logo'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import React from 'react'
 import { cn } from '@/lib/utils'
+import dynamic from 'next/dynamic'
+
+const StaggeredMenu = dynamic(() => import('@/components/StaggeredMenu').then(mod => mod.default || mod.StaggeredMenu), { ssr: false })
 
 const menuItems = [
     { name: 'About', href: '/about' },
@@ -153,110 +156,35 @@ export const HeroHeader = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMenuState(!menuState)}
-                        aria-label={menuState ? 'Close Menu' : 'Open Menu'}
-                        className={cn(
-                            'relative z-30 flex size-10 items-center justify-center rounded-full transition-all duration-200 lg:hidden',
-                            menuState
-                                ? 'bg-white/10 text-white'
-                                : 'text-white/70 hover:bg-white/[0.06] hover:text-white'
-                        )}
-                    >
-                        <Menu
-                            className={cn(
-                                'size-5 transition-all duration-300',
-                                menuState && 'rotate-180 scale-0 opacity-0'
-                            )}
+                    {/* Mobile Menu (StaggeredMenu) */}
+                    <div className="block lg:hidden absolute inset-0 z-50 pointer-events-none">
+                        <StaggeredMenu
+                            position="right"
+                            items={[
+                                { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+                                { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
+                                { label: 'Services', ariaLabel: 'View our services', link: '/services' },
+                                { label: 'Our Work', ariaLabel: 'View our work', link: '/works' },
+                                { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
+                            ] as any}
+                            socialItems={[
+                                { label: 'X (Twitter)', link: 'https://twitter.com/orvynlabs' },
+                                { label: 'GitHub', link: 'https://github.com/orvynlabs' },
+                                { label: 'LinkedIn', link: 'https://linkedin.com/company/orvynlabs' }
+                            ] as any}
+                            displaySocials
+                            displayItemNumbering={true}
+                            menuButtonColor="#ffffff"
+                            openMenuButtonColor="#fff"
+                            changeMenuColorOnOpen={true}
+                            colors={['#1a1a1a', '#111111', '#0a0a0a', '#000000']}
+                            logoUrl=""
+                            accentColor="#ffffff"
+                            isFixed={false}
+                            onMenuOpen={() => { document.body.style.overflow = 'hidden' }}
+                            onMenuClose={() => { document.body.style.overflow = '' }}
+                            className="pointer-events-auto"
                         />
-                        <X
-                            className={cn(
-                                'absolute size-5 transition-all duration-300',
-                                menuState
-                                    ? 'rotate-0 scale-100 opacity-100'
-                                    : '-rotate-180 scale-0 opacity-0'
-                            )}
-                        />
-                    </button>
-                </div>
-
-                {/* Mobile Menu Overlay */}
-                <div
-                    className={cn(
-                        'fixed inset-0 z-20 transition-all duration-500 lg:hidden',
-                        menuState
-                            ? 'pointer-events-auto opacity-100'
-                            : 'pointer-events-none opacity-0'
-                    )}
-                >
-                    {/* Backdrop */}
-                    <div
-                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-                        onClick={() => setMenuState(false)}
-                    />
-
-                    {/* Menu Panel */}
-                    <div
-                        className={cn(
-                            'absolute inset-x-3 top-3 flex flex-col rounded-2xl border border-white/[0.08] bg-[#0a0a0a]/95 p-6 shadow-[0_16px_64px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-500 sm:inset-x-4',
-                            menuState
-                                ? 'translate-y-0 opacity-100'
-                                : '-translate-y-4 opacity-0'
-                        )}
-                    >
-                        {/* Mobile Header */}
-                        <div className="mb-8 flex items-center justify-between">
-                            <Link href="/" onClick={() => setMenuState(false)}>
-                                <Logo />
-                            </Link>
-                            <button
-                                onClick={() => setMenuState(false)}
-                                className="flex size-10 items-center justify-center rounded-full bg-white/[0.06] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-                            >
-                                <X className="size-5" />
-                            </button>
-                        </div>
-
-                        {/* Mobile Links */}
-                        <ul className="flex flex-col gap-1">
-                            {menuItems.map((item, index) => (
-                                <li key={index}>
-                                    <Link
-                                        href={item.href}
-                                        onClick={(e) => handleHashClick(e, item.href)}
-                                        className={cn(
-                                            'group flex items-center justify-between rounded-xl px-4 py-3.5 text-lg font-medium transition-all duration-200',
-                                            isActive(item.href)
-                                                ? 'bg-white/[0.08] text-white'
-                                                : 'text-white/60 hover:bg-white/[0.04] hover:text-white/90'
-                                        )}
-                                    >
-                                        <span>{item.name}</span>
-                                        <ArrowRight
-                                            className={cn(
-                                                'size-4 transition-all duration-200',
-                                                isActive(item.href)
-                                                    ? 'text-white/40'
-                                                    : 'text-white/20 group-hover:translate-x-0.5 group-hover:text-white/40'
-                                            )}
-                                        />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-
-                        {/* Mobile CTA */}
-                        <div className="mt-6 border-t border-white/[0.06] pt-6">
-                            <Link
-                                href="/contact"
-                                onClick={(e) => handleHashClick(e, '/contact')}
-                                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-black transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.12)]"
-                            >
-                                <span>Get Started</span>
-                                <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </nav>

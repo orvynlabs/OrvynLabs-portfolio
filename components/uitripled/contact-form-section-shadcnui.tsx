@@ -143,10 +143,10 @@ export function ContactFormSection() {
                   We’ll schedule a discovery call to understand your goals,
                   timeline, and success metrics. Prefer email? Reach us at{" "}
                   <a
-                    href="mailto:mubashirppofcl@gmail.com"
+                    href="mailto:orvynlabs@gmail.com"
                     className="text-foreground underline decoration-border/70 underline-offset-4 transition-colors hover:text-primary"
                   >
-                    mubashirppofcl@gmail.com
+                    orvynlabs@gmail.com
                   </a>
                   .
                 </p>
@@ -160,7 +160,7 @@ export function ContactFormSection() {
                   />
                   <div>
                     <p className="text-sm font-medium text-foreground">Email</p>
-                    <p>mubashirppofcl@gmail.com</p>
+                    <p>orvynlabs@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 rounded-xl border border-border/40 bg-background/40 p-3">
@@ -169,8 +169,8 @@ export function ContactFormSection() {
                     aria-hidden="true"
                   />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Location</p>
-                    <p>Calicut, Kerala, India</p>
+                    <p className="text-sm font-medium text-foreground">Phone / WhatsApp</p>
+                    <p>+91 9496022026</p>
                   </div>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export function ContactFormSection() {
                     id="name"
                     name="name"
                     type="text"
-                    placeholder="Mubashir PP"
+                    placeholder="Name"
                     value={formData.name}
                     onChange={handleChange}
                     className="rounded-xl border border-border/40 bg-background/40 text-sm text-foreground transition-all focus-visible:border-border/60 focus-visible:ring-2 focus-visible:ring-primary/30"
@@ -214,7 +214,7 @@ export function ContactFormSection() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="founder@startup.com"
+                      placeholder="Email"
                       value={formData.email}
                       onChange={handleChange}
                       className="rounded-xl border border-border/40 bg-background/40 pl-10 text-sm text-foreground transition-all focus-visible:border-border/60 focus-visible:ring-2 focus-visible:ring-primary/30"
@@ -311,7 +311,7 @@ export function ContactFormSection() {
           </div>
           <span>•</span>
           <div className="flex items-center gap-2">
-            <span>Working hours: 09:00 - 18:00 IST</span>
+            <span>Working hours: 24h</span>
           </div>
         </motion.div>
       </div>

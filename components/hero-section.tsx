@@ -11,6 +11,11 @@ import { HeroHeader } from './header'
 import { Particles } from '@/components/ui/particles'
 import VariableProximity from '@/components/ui/variable-proximity'
 import Cursor from '@/components/ui/cursor'
+import dynamic from 'next/dynamic'
+import { motion } from 'motion/react'
+import { FaWhatsapp } from 'react-icons/fa'
+
+const ColorBends = dynamic(() => import('@/components/ColorBends'), { ssr: false })
 
 
 const transitionVariants = {
@@ -48,40 +53,28 @@ export default function HeroSection() {
                 </div>
                 <section className="relative" ref={containerRef}>
                     <div className="relative flex min-h-[100dvh] flex-col items-center justify-center pt-24 pb-8 sm:min-h-[85vh] sm:pt-28 sm:pb-16 lg:h-screen lg:pt-0 lg:pb-0">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            type: 'spring',
-                                            bounce: 0.3,
-                                            duration: 2,
-                                        } as const,
-                                    },
-                                },
-                            }}
-                            className="absolute inset-0 -z-20">
-                            <Image
-                                src="/hero.png"
-                                alt="background"
-                                className="size-full object-cover opacity-50"
-                                fill
-                                priority
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 2, ease: "easeOut" }}
+                            className="absolute inset-0 -z-20 size-full"
+                        >
+                            <ColorBends
+                                className=""
+                                style={{}}
+                                rotation={255}
+                                speed={0.05}
+                                colors={["#9b3103", "#000000", "#011141"] as any}
+                                transparent={false}
+                                autoRotate={0}
+                                scale={1.2}
+                                frequency={1}
+                                warpStrength={1}
+                                mouseInfluence={1}
+                                parallax={0.5}
+                                noise={0.1}
                             />
-                        </AnimatedGroup>
+                        </motion.div>
 
                         <div className="absolute inset-0 z-0 bg-linear-to-t from-background via-transparent to-transparent" />
 
@@ -163,9 +156,9 @@ export default function HeroSection() {
                                     </h1>
                                 </AnimatedGroup>
 
-                                <div className="mx-auto mt-6 max-w-3xl flex justify-center text-center">
+                                <div className="mx-auto mt-6 max-w-4xl flex justify-center text-center">
                                     <VariableProximity
-                                        label="We help brands grow with standout design, clear branding, and content that drives results."
+                                        label="Built on Structure. Designed to Scale. We focus on systems-thinking and engineering over simple development."
                                         className="text-balance text-base font-bold md:text-lg text-muted-foreground"
                                         fromFontVariationSettings="'wght' 400, 'opsz' 9"
                                         toFontVariationSettings="'wght' 1000, 'opsz' 40"
@@ -195,21 +188,25 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base w-full sm:w-auto">
-                                            <Link href="/#contact">
-                                                <span className="text-nowrap">Get Started</span>
+                                            <Link href="/contact">
+                                                <span className="text-nowrap">Contact Now</span>
                                             </Link>
                                         </Button>
                                     </div>
-                                    <Button
+                                    <div
                                         key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5 w-full sm:w-auto">
-                                        <Link href="/#our-work">
-                                            <span className="text-nowrap">Learn More</span>
-                                        </Link>
-                                    </Button>
+                                        className="bg-[#ffffff]/10 rounded-[calc(var(--radius-xl)+0.125rem)] border border-[#ffffff]/20 p-0.5">
+                                        <Button
+                                            asChild
+                                            size="lg"
+                                            variant="ghost"
+                                            className="h-10.5 rounded-xl px-5 w-full flex items-center gap-2 sm:w-auto hover:bg-transparent hover:text-[#25D366] text-[#ffffff] transition-colors">
+                                            <Link href="https://wa.me/919496022026" target="_blank" rel="noopener noreferrer">
+                                                <FaWhatsapp className="size-5" />
+                                                <span className="text-nowrap">Chat to WhatsApp</span>
+                                            </Link>
+                                        </Button>
+                                    </div>
                                 </AnimatedGroup>
                             </div>
                         </div>

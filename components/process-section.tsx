@@ -4,11 +4,11 @@ import FlowingMenu from './ui/flowing-menu'
 import ScrollReveal from './ui/scroll-reveal'
 
 const processItems = [
-    { link: '#', text: 'Discover', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Request', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'Create', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'Activate', image: 'https://picsum.photos/600/400?random=4' }
-];
+    { text: 'Discover', image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&h=400&fit=crop' }, // People planning/meeting
+    { text: 'Request', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop' },  // Data/analytics dashboard
+    { text: 'Create', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&h=400&fit=crop' },   // Code on screen
+    { text: 'Activate', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&h=400&fit=crop' } // Deployment/launch metrics
+] as any;
 
 export default function ProcessSection() {
     return (

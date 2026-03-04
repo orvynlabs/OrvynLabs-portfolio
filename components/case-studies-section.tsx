@@ -16,9 +16,9 @@ interface Project {
 
 const projects: Project[] = [
     {
-        name: 'F&I Tax',
-        description: 'A modern landing page for a tax agency with sleek animations and professional design.',
-        tags: ['Tax', 'Agency'],
+        name: 'NEXTZEN',
+        description: 'A flagship MERN e-commerce system with AI logic and secure payment flows.',
+        tags: ['E-Commerce', 'MERN', 'AI'],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
         links: { demo: "#" }
     },

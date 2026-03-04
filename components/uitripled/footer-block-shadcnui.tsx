@@ -104,7 +104,7 @@ export function FooterBlock() {
               className="mb-4 inline-flex items-center gap-3"
             >
               <Card className="rounded-2xl border border-border/60 bg-card/80 px-3 py-1 text-xs uppercase tracking-[0.32em] text-muted-foreground shadow-[0_10px_30px_-20px_rgba(15,23,42,0.8)]">
-                Brand
+                ORVYN LABS
               </Card>
               <Badge
                 variant="outline"
@@ -114,8 +114,7 @@ export function FooterBlock() {
               </Badge>
             </motion.div>
             <p className="mb-4 max-w-md text-sm text-muted-foreground">
-              Building amazing products with modern technologies. Join us on our
-              journey to create better user experiences.
+              ORVYN LABS is a digital product and growth studio based in Calicut, Kerala. Operated by a 4-member specialist team, we build structured, scalable technology for startups. We focus on systems-thinking and engineering over simple development.
             </p>
 
             {/* Newsletter */}
@@ -140,27 +139,28 @@ export function FooterBlock() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="space-y-4 text-sm text-muted-foreground mt-6 border-t border-border/10 pt-6">
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : { x: 5 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
-                <MapPin className="h-4 w-4" aria-hidden />
-                <span>123 Business St, City 12345</span>
+                <Mail className="h-4 w-4 text-primary" aria-hidden />
+                <span>orvynlabs@gmail.com</span>
               </motion.div>
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : { x: 5 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-3"
               >
-                <Phone className="h-4 w-4" aria-hidden />
-                <span>+1 (555) 123-4567</span>
+                <Phone className="h-4 w-4 text-primary" aria-hidden />
+                <span>+91 9496022026</span>
               </motion.div>
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : { x: 5 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-3 pt-2"
               >
-                <Mail className="h-4 w-4" aria-hidden />
-                <span>hello@example.com</span>
+                <p className="text-xs text-muted-foreground italic">
+                  'Built on Structure. Designed to Scale.'
+                </p>
               </motion.div>
             </div>
           </motion.div>
@@ -260,7 +260,7 @@ export function FooterBlock() {
             transition={{ delay: 0.6 }}
             className="flex items-center gap-2 text-sm text-muted-foreground"
           >
-            <span>© 2024 Brand. All rights reserved.</span>
+            <span>© 2024 ORVYN LABS. All rights reserved.</span>
             <Badge variant="outline" className="text-xs">
               v1.0.0
             </Badge>

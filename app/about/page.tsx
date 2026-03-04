@@ -163,14 +163,14 @@ export default function AboutPage() {
                                         Our story began in Calicut. Shortly after completing our BCA degrees, four developers united by a shared obsession for clean code and systems thinking decided to move beyond the traditional "agency" model.
                                     </p>
                                     <p>
-                                        We realized that many founders weren't just looking for websites; they needed <strong>infrastructure</strong>. They needed systems that could handle users, secure payments, and scale without breaking. 
+                                        We realized that many founders weren't just looking for websites; they needed <strong>infrastructure</strong>. They needed systems that could handle users, secure payments, and scale without breaking.
                                     </p>
                                     <p>
                                         Today, <strong>ORVYN LABS</strong> is a specialized 4-member team. We operate at the intersection of product engineering and growth strategy, using the <strong>MERN stack</strong> to build high-stakes digital products.
                                     </p>
                                     <div className="pt-4 flex flex-col gap-3">
                                         <p className="italic text-white/60 font-medium flex items-center gap-2">
-                                            <ChevronRight size={16} className="text-[white]" /> 
+                                            <ChevronRight size={16} className="text-[white]" />
                                             No messy development. Only structured systems.
                                         </p>
                                         <p className="text-sm flex items-center gap-2 text-white/30 font-display">
@@ -274,7 +274,7 @@ export default function AboutPage() {
                         </p>
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center gap-3 rounded-full bg-[white] px-10 py-4 text-sm font-semibold text-white transition-all hover:bg-[#e5e5e5] hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                            className="inline-flex items-center gap-3 rounded-full text-black bg-[white] px-10 py-4 text-sm font-semibold  transition-all hover:bg-[#e5e5e5] hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                         >
                             Start Your Build
                             <Rocket size={16} />
