@@ -3,14 +3,14 @@ import React, { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { 
-    ArrowUpRight, 
-    Github, 
-    Layers, 
-    Zap, 
-    ShieldCheck, 
-    Cpu, 
-    ArrowRight, 
+import {
+    ArrowUpRight,
+    Github,
+    Layers,
+    Zap,
+    ShieldCheck,
+    Cpu,
+    ArrowRight,
     Link
 } from 'lucide-react'
 import { HeroHeader } from '@/components/header'
@@ -85,12 +85,12 @@ export default function WorksPage() {
                                     Selected <br /><span className="text-white/40 font-normal italic">Artifacts.</span>
                                 </h1>
                                 <p className="gsap-work-fade text-lg text-white/50 leading-relaxed">
-                                    A collection of structured systems, MVPs, and digital products 
-                                    built with the MERN stack. We don't just build sites; we engineer 
+                                    A collection of structured systems, MVPs, and digital products
+                                    built with the MERN stack. We don't just build sites; we engineer
                                     solutions that scale.
                                 </p>
                             </div>
-                            
+
                             {/* Technical Capabilities Badges */}
                             <div className="gsap-work-fade flex flex-wrap gap-3 pb-2">
                                 <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] uppercase tracking-widest text-white/70">
@@ -113,7 +113,7 @@ export default function WorksPage() {
                         </div>
 
                         {featuredProjects.map((project, index) => (
-                            <motion.div 
+                            <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ export default function WorksPage() {
                                         <h3 className="text-4xl font-bold text-white group-hover:text-[white] transition-colors">{project.title}</h3>
                                     </div>
                                     <p className="text-white/50 leading-relaxed">{project.description}</p>
-                                    
+
                                     <div className="grid grid-cols-3 gap-4 border-y border-white/10 py-6">
                                         {Object.entries(project.stats).map(([key, val]) => (
                                             <div key={key}>
@@ -167,7 +167,7 @@ export default function WorksPage() {
                 {/* Original Case Studies Grid Section */}
                 <div className="pb-24">
                     <div className="mx-auto max-w-7xl px-6 mb-12">
-                         <h2 className="font-display text-2xl font-bold text-white">Full Archive</h2>
+                        <h2 className="font-display text-2xl font-bold text-white">Full Archive</h2>
                     </div>
                     <CaseStudiesSection />
                 </div>
@@ -178,8 +178,8 @@ export default function WorksPage() {
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
                             Have a complex system <br />in mind?
                         </h2>
-                        <Link 
-                            href="/contact" 
+                        <Link
+                            href="/contact"
                             className="inline-flex items-center gap-3 rounded-full bg-white px-10 py-4 text-sm font-bold text-black hover:bg-[white] hover:text-white transition-all shadow-xl shadow-white/5"
                         >
                             Discuss Your Project <ArrowRight size={18} />

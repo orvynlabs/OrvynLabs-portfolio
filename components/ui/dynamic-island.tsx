@@ -145,9 +145,9 @@ type BlobAction =
   | { type: "SET_SIZE"; newSize: SizePresets }
   | { type: "INITIALIZE"; firstState: SizePresets }
   | {
-      type: "SCHEDULE_ANIMATION"
-      animationSteps: Array<{ size: SizePresets; delay: number }>
-    }
+    type: "SCHEDULE_ANIMATION"
+    animationSteps: Array<{ size: SizePresets; delay: number }>
+  }
   | { type: "ANIMATION_END" }
 
 type BlobContextType = {

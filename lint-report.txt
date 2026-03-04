@@ -1,0 +1,178 @@
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\app\contact\page.tsx[24m[0m
+[0m  [2m6:8[22m  [33mwarning[39m  'Cursor' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ProfileCard.tsx[24m[0m
+[0m  [2m515:33[22m  [33mwarning[39m  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [2m@next/next/no-img-element[22m[0m
+[0m  [2m555:49[22m  [33mwarning[39m  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [2m@next/next/no-img-element[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\SplashCursor.tsx[24m[0m
+[0m  [2m142:39[22m  [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m144:23[22m  [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m145:21[22m  [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m146:20[22m  [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m284:5[22m   [33mwarning[39m  Compilation Skipped: Inline `class` declarations are not supported[0m
+[0m[0m
+[0mMove class declarations outside of components/hooks.[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\SplashCursor.tsx:284:5[0m
+[0m  282 |     }[0m
+[0m  283 |[0m
+[0m> 284 |     class Program {[0m
+[0m      |     ^^^^^^^^^^^^^^^[0m
+[0m> 285 |       program: WebGLProgram | null;[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 286 |       uniforms: Record<string, WebGLUniformLocation | null>;[0m
+[0m      …[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 295 |       }[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 296 |     }[0m
+[0m      | ^^^^^^ Inline `class` declarations are not supported[0m
+[0m  297 |[0m
+[0m  298 |     class Material {[0m
+[0m  299 |       vertexShader: WebGLShader | null;[0m
+[0m[0m
+[0m  [2mreact-hooks/unsupported-syntax[22m[0m
+[0m  [2m298:5[22m   [33mwarning[39m  Compilation Skipped: Inline `class` declarations are not supported[0m
+[0m[0m
+[0mMove class declarations outside of components/hooks.[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\SplashCursor.tsx:298:5[0m
+[0m  296 |     }[0m
+[0m  297 |[0m
+[0m> 298 |     class Material {[0m
+[0m      |     ^^^^^^^^^^^^^^^^[0m
+[0m> 299 |       vertexShader: WebGLShader | null;[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 300 |       fragmentShaderSource: string;[0m
+[0m      …[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 335 |       }[0m
+[0m      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m> 336 |     }[0m
+[0m      | ^^^^^^ Inline `class` declarations are not supported[0m
+[0m  337 |[0m
+[0m  338 |     const baseVertexShader = compileShader([0m
+[0m  339 |       gl.VERTEX_SHADER,[0m
+[0m[0m
+[0m  [2mreact-hooks/unsupported-syntax[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\StaggeredMenu.jsx[24m[0m
+[0m  [2m379:13[22m  [33mwarning[39m  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [2m@next/next/no-img-element[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\about-section.tsx[24m[0m
+[0m  [2m2:17[22m  [33mwarning[39m  'useEffect' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\carousel.tsx[24m[0m
+[0m   [2m54:8[22m   [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m   [2m55:17[22m  [31merror[39m    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m   [2m78:13[22m  [33mwarning[39m  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  [2m@next/next/no-img-element[22m[0m
+[0m  [2m139:9[22m   [31merror[39m    Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\carousel.tsx:139:9[0m
+[0m  137 |     useEffect(() => {[0m
+[0m  138 |         const startingPosition = loop ? 1 : 0;[0m
+[0m> 139 |         setPosition(startingPosition);[0m
+[0m      |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  140 |         x.set(-startingPosition * trackItemOffset);[0m
+[0m  141 |     }, [items.length, loop, trackItemOffset, x]);[0m
+[0m  142 |    [2mreact-hooks/set-state-in-effect[22m[0m
+[0m  [2m145:13[22m  [31merror[39m    Error: Calling setState synchronously within an effect can trigger cascading renders[0m
+[0m[0m
+[0mEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:[0m
+[0m* Update external systems with the latest state from React.[0m
+[0m* Subscribe for updates from some external system, calling setState in a callback function when external state changes.[0m
+[0m[0m
+[0mCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\carousel.tsx:145:13[0m
+[0m  143 |     useEffect(() => {[0m
+[0m  144 |         if (!loop && position > itemsForRender.length - 1) {[0m
+[0m> 145 |             setPosition(Math.max(0, itemsForRender.length - 1));[0m
+[0m      |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect[0m
+[0m  146 |         }[0m
+[0m  147 |     }, [itemsForRender.length, loop, position]);[0m
+[0m  148 |  [2mreact-hooks/set-state-in-effect[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\footer.tsx[24m[0m
+[0m  [2m282:86[22m  [31merror[39m  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\header.tsx[24m[0m
+[0m    [2m5:10[22m  [33mwarning[39m  'Menu' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m    [2m5:16[22m  [33mwarning[39m  'X' is defined but never used             [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m169:34[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m174:34[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\hero-section.tsx[24m[0m
+[0m   [2m5:22[22m  [33mwarning[39m  'ChevronRight' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m8:10[22m  [33mwarning[39m  'TextEffect' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m13:8[22m   [33mwarning[39m  'Cursor' is defined but never used        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m67:78[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\process-section.tsx[24m[0m
+[0m  [2m11:6[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\project-card.tsx[24m[0m
+[0m   [2m3:10[22m  [33mwarning[39m  'Badge' is defined but never used                                                                                                                                                                                                                                                        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m4:10[22m  [33mwarning[39m  'Card' is defined but never used                                                                                                                                                                                                                                                         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m6:10[22m  [33mwarning[39m  'motion' is defined but never used                                                                                                                                                                                                                                                       [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m7:10[22m  [33mwarning[39m  'ExternalLink' is defined but never used                                                                                                                                                                                                                                                 [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m   [2m7:24[22m  [33mwarning[39m  'Github' is defined but never used                                                                                                                                                                                                                                                       [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m33:5[22m   [33mwarning[39m  'description' is assigned a value but never used                                                                                                                                                                                                                                         [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m46:21[22m  [33mwarning[39m  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [2m@next/next/no-img-element[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\animated-group.tsx[24m[0m
+[0m  [2m119:31[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m123:36[22m  [31merror[39m  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m128:6[22m   [31merror[39m  Error: Cannot create components during render[0m
+[0m[0m
+[0mComponents created during render will reset their state each time they are created. Declare components outside of render.[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\animated-group.tsx:128:6[0m
+[0m  126 |[0m
+[0m  127 |   return ([0m
+[0m> 128 |     <MotionComponent[0m
+[0m      |      ^^^^^^^^^^^^^^^ This component is created during render[0m
+[0m  129 |       initial='hidden'[0m
+[0m  130 |       animate='visible'[0m
+[0m  131 |       variants={containerVariants}[0m
+[0m[0m
+[0mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\animated-group.tsx:119:11[0m
+[0m  117 |[0m
+[0m  118 |   const MotionComponent = React.useMemo([0m
+[0m> 119 |     () => motion.create(as as any),[0m
+[0m      |           ^^^^^^^^^^^^^^^^^^^^^^^^ The component is created during render here[0m
+[0m  120 |     [as][0m
+[0m  121 |   );[0m
+[0m  122 |   const MotionChild = React.useMemo(  [2mreact-hooks/static-components[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\dynamic-island.tsx[24m[0m
+[0m  [2m362:15[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m  [2m364:18[22m  [31merror[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\particles.tsx[24m[0m
+[0m  [2m130:6[22m  [33mwarning[39m  React Hook useEffect has missing dependencies: 'animate' and 'initCanvas'. Either include them or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m  [2m134:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'onMouseMove'. Either include it or remove the dependency array                 [2mreact-hooks/exhaustive-deps[22m[0m
+[0m  [2m138:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'initCanvas'. Either include it or remove the dependency array                  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\ui\text-effect.tsx[24m[0m
+[0m  [2m183:17[22m  [33mwarning[39m  '_' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\components\uitripled\footer-block-shadcnui.tsx[24m[0m
+[0m   [2m15:3[22m   [33mwarning[39m  'MapPin' is defined but never used                               [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m162:19[22m  [31merror[39m    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m  [2m162:58[22m  [31merror[39m    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  [2mreact/no-unescaped-entities[22m[0m
+[0m[0m
+[0m[4mC:\Users\ADMIN\OneDrive\Desktop\OrvynLabs-portfolio\fix-colors.js[24m[0m
+[0m  [2m1:12[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m  [2m2:14[22m  [31merror[39m  A `require()` style import is forbidden  [2m@typescript-eslint/no-require-imports[22m[0m
+[0m[0m
+[0m[31m[1m✖ 47 problems (22 errors, 25 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m
