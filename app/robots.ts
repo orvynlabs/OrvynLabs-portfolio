@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://orvynlabs.in/sitemap.xml",
+    sitemap: "https://www.orvynlabs.in/sitemap.xml",
   };
 }

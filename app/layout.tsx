@@ -16,7 +16,7 @@ const bricolage = Bricolage_Grotesque({
 
 // SEO Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://orvynlabs.in"),
+  metadataBase: new URL("https://www.orvynlabs.in"),
 
   title: {
     default:
