@@ -7,10 +7,12 @@ import {
     Code2,
     Zap,
     ShieldCheck,
-    Terminal
+    Terminal,
+    ArrowRight
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import ScrollReveal from './ui/scroll-reveal'
+import Link from 'next/link'
 
 interface ServiceItem {
     icon: LucideIcon
@@ -25,21 +27,21 @@ const services: { left: ServiceItem[]; right: ServiceItem[] } = {
     left: [
         {
             icon: Terminal,
-            label: 'MERN Stack',
+            label: 'MERN Stack Development',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: -3,
         },
         {
             icon: Database,
-            label: 'Scalable DB',
+            label: 'Startup Systems',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: 2,
         },
         {
             icon: Cpu,
-            label: 'Architecture',
+            label: 'Next.js Architecture',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: -1,
@@ -48,21 +50,21 @@ const services: { left: ServiceItem[]; right: ServiceItem[] } = {
     right: [
         {
             icon: Zap,
-            label: 'MVP Builds',
+            label: 'MVP Development',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: 2,
         },
         {
             icon: Code2,
-            label: 'Clean Code',
+            label: 'Product Engineering',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: -2,
         },
         {
             icon: ShieldCheck,
-            label: 'SaaS Logic',
+            label: 'SaaS Platforms',
             bgColor: '#ffffff',
             iconColor: '#0a0a0a',
             rotation: 3,
@@ -93,7 +95,7 @@ function ServiceBadge({
             >
                 <Icon size={14} color={iconColor} strokeWidth={2.5} />
             </div>
-            <span className="service-badge-label text-white/70 text-sm font-medium tracking-tight whitespace-nowrap">{label}</span>
+            <h3 className="service-badge-label text-white/70 text-sm font-medium tracking-tight whitespace-nowrap">{label}</h3>
         </motion.div>
     )
 }
@@ -113,7 +115,7 @@ function MobileServiceBadge({
             >
                 <Icon size={12} color={iconColor} strokeWidth={2.5} />
             </div>
-            <span className="service-badge-label text-white/60 text-xs font-medium">{label}</span>
+            <h3 className="service-badge-label text-white/60 text-xs font-medium">{label}</h3>
         </div>
     )
 }
@@ -133,7 +135,7 @@ export default function AboutSection() {
             {/* Hello divider */}
             <div className="flex items-center justify-center gap-4 mb-16">
                 <div className="h-px w-16 bg-white/10" />
-                <span className="font-display text-sm italic text-white/40 tracking-wide uppercase font-bold">The Labs Blueprint</span>
+                <h2 className="font-display text-sm italic text-white/40 tracking-wide uppercase font-bold">Our Service Pillars</h2>
                 <div className="h-px w-16 bg-white/10" />
             </div>
 
@@ -162,8 +164,10 @@ export default function AboutSection() {
                             containerClassName="max-w-4xl mx-auto"
                             textClassName="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.25] tracking-tight text-center text-white"
                         >
-                            A premium product studio engineering scalable systems for the next generation of startups.
+                            A premium product studio engineering scalable systems for the next generation of startups in Calicut, Kerala.
                         </ScrollReveal>
+                        <div className="flex justify-center mt-12">
+                        </div>
                     </div>
 
                     {/* Right badges — desktop only */}

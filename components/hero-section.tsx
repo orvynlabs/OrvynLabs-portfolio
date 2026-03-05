@@ -128,13 +128,13 @@ export default function HeroSection() {
 
                                             {/* Vertical Marquee */}
                                             <div className="absolute left-0 right-0 top-0 flex w-full flex-col items-center gap-3 py-3 animate-marquee-vertical hover:[animation-play-state:paused]">
-                                                <Image src="/projects/project1.png" alt="Project 1" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project2.png" alt="Project 2" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project3.png" alt="Project 3" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project3.png" alt="ORVYN LABS SaaS platform development" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                                 {/* Duplicate for seamless infinite loop */}
-                                                <Image src="/projects/project1.png" alt="Project 1" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project2.png" alt="Project 2" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project3.png" alt="Project 3" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/project3.png" alt="ORVYN LABS SaaS platform development" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                             </div>
 
                                             {/* Bottom Pill Control Overlay */}
@@ -158,7 +158,7 @@ export default function HeroSection() {
 
                                 <div className="mx-auto mt-6 max-w-4xl flex justify-center text-center">
                                     <VariableProximity
-                                        label="Built on Structure. Designed to Scale. We focus on systems-thinking and engineering over simple development."
+                                        label="Specialized in MERN Stack Web Development and Next.js Application Architecture. We build scalable SaaS platforms and Startup Systems designed to grow."
                                         className="text-balance text-base font-bold md:text-lg text-muted-foreground"
                                         fromFontVariationSettings="'wght' 400, 'opsz' 9"
                                         toFontVariationSettings="'wght' 1000, 'opsz' 40"

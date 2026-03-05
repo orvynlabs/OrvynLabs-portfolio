@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectCardProps {
     title?: string;
@@ -43,9 +44,11 @@ export function ProjectCard({
         >
             <div className="flex flex-col h-full overflow-hidden rounded-[24px] border border-white/10 bg-[#060606] transition-opacity hover:opacity-80 p-3">
                 <div className="relative aspect-video overflow-hidden rounded-[16px]">
-                    <img
+                    <Image
                         src={image}
-                        alt={title}
+                        alt={`ORVYN LABS project: ${title} - ${description}`}
+                        width={800}
+                        height={500}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                 </div>

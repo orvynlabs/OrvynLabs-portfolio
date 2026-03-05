@@ -1,20 +1,11 @@
-'use client'
-import React from 'react'
-import { HeroHeader } from '@/components/header'
-import { FooterBlock } from '@/components/uitripled/footer-block-shadcnui'
-import { ContactFormSection } from '@/components/uitripled/contact-form-section-shadcnui'
-import Cursor from '@/components/ui/cursor'
+import type { Metadata } from "next";
+import ContactPageClient from "./contact-page-client";
 
-export default function ContactPage() {
-    return (
-        <>
-            <HeroHeader />
-            <main className="overflow-hidden bg-[#0a0a0a] min-h-screen">
-                <div className="pt-24 lg:pt-32 pb-12">
-                    <ContactFormSection />
-                </div>
-                <FooterBlock />
-            </main>
-        </>
-    )
+export const metadata: Metadata = {
+    title: "Contact ORVYN LABS | Web Development Studio in Calicut",
+    description: "Discuss your project with ORVYN LABS. We engineer scalable MERN and Next.js systems for startups from MVP to SaaS platforms.",
+};
+
+export default function Page() {
+    return <ContactPageClient />;
 }

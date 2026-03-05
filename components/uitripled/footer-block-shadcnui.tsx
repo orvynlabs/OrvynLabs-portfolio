@@ -162,7 +162,7 @@ export function FooterBlock() {
               </Badge>
             </motion.div>
             <p className="mb-4 max-w-md text-sm text-balance text-muted-foreground">
-              ORVYN LABS is a specialized digital product agency focusing on architectural engineering and high-fidelity design. We help startups build structured, scalable foundations that last.
+              ORVYN LABS is a specialized digital product agency in Calicut, Kerala, focusing on architectural engineering and high-fidelity design. We help startups build structured, scalable foundations that last.
             </p>
 
             {/* Newsletter */}
