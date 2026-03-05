@@ -14,9 +14,32 @@ const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
+// Improved SEO Metadata
 export const metadata: Metadata = {
-  title: "Orvyn Labs",
-  description: "Orvyn Labs - Building the future",
+  metadataBase: new URL("https://orvynlabs.in"),
+
+  title: {
+    default: "ORVYN LABS | Digital Product & Growth Studio",
+    template: "%s | ORVYN LABS",
+  },
+
+  description:
+    "ORVYN LABS is a Calicut-based digital product studio building scalable startup technology, MERN applications, SaaS platforms and growth-driven digital systems.",
+
+  openGraph: {
+    title: "ORVYN LABS | Digital Product & Growth Studio",
+    description:
+      "A Calicut-based engineering studio building scalable startup products, MERN platforms and modern SaaS systems.",
+    url: "https://orvynlabs.in",
+    siteName: "ORVYN LABS",
+    locale: "en_IN",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${bricolage.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
         <Preloader />
         <Cursor />
         {children}
