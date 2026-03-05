@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -15,36 +16,83 @@ import {
   MapPin,
   Phone,
   Twitter,
+  Loader2,
+  CheckCircle2,
 } from "lucide-react";
+
+import Link from "next/link";
 
 const footerLinks = [
   {
-    title: "Product",
-    links: ["Features", "Pricing", "Documentation", "API Reference"],
+    title: "Navigation",
+    links: [
+      { name: "About Us", href: "/about" },
+      { name: "Services", href: "/services" },
+      { name: "Works", href: "/works" },
+      { name: "Contact", href: "/contact" },
+    ],
   },
   {
-    title: "Company",
-    links: ["About Us", "Careers", "Blog", "Press Kit"],
+    title: "Services",
+    links: [
+      { name: "Development", href: "/services" },
+      { name: "Creative & Design", href: "/services" },
+      { name: "Growth & Ads", href: "/services" },
+      { name: "Strategic Systems", href: "/services" },
+    ],
   },
   {
-    title: "Resources",
-    links: ["Community", "Help Center", "Partners", "Status"],
-  },
-  {
-    title: "Legal",
-    links: ["Privacy", "Terms", "Cookie Policy", "Licenses"],
+    title: "Direct Contact",
+    links: [
+      { name: "WhatsApp", href: "https://wa.me/919496022026" },
+      { name: "Email Us", href: "mailto:orvynlabs@gmail.com" },
+      { name: "Get Support", href: "/contact" },
+      { name: "Schedule Meeting", href: "/contact" },
+    ],
   },
 ];
 
 const socialLinks = [
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/orvynlabs" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/orvynlabs" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/orvynlabs" },
+  { icon: Github, label: "GitHub", href: "https://github.com/orvynlabs" },
 ];
 
 export function FooterBlock() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('loading');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: "Newsletter Subscriber",
+          email: email,
+          phone: "Newsletter",
+          message: `New subscription request from: ${email}`
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail("");
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Subscription error:", error);
+      setStatus('error');
+    }
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -99,7 +147,7 @@ export function FooterBlock() {
             className="lg:col-span-2"
           >
             <motion.div
-              whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
               transition={{ duration: 0.2 }}
               className="mb-4 inline-flex items-center gap-3"
             >
@@ -110,11 +158,11 @@ export function FooterBlock() {
                 variant="outline"
                 className="text-xs text-muted-foreground"
               >
-                Since 2018
+                STUDIO
               </Badge>
             </motion.div>
-            <p className="mb-4 max-w-md text-sm text-muted-foreground">
-              ORVYN LABS is a digital product and growth studio based in Calicut, Kerala. Operated by a 4-member specialist team, we build structured, scalable technology for startups. We focus on systems-thinking and engineering over simple development.
+            <p className="mb-4 max-w-md text-sm text-balance text-muted-foreground">
+              ORVYN LABS is a specialized digital product agency focusing on architectural engineering and high-fidelity design. We help startups build structured, scalable foundations that last.
             </p>
 
             {/* Newsletter */}
@@ -122,20 +170,37 @@ export function FooterBlock() {
               <p className="mb-2 text-sm font-medium text-foreground">
                 Subscribe to our newsletter
               </p>
-              <div className="flex gap-2">
+              <form onSubmit={handleSubscribe} className="flex gap-2">
                 <Input
                   type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="h-10 rounded-xl border-border/60 bg-background/60 backdrop-blur placeholder:text-muted-foreground"
                 />
                 <Button
+                  type="submit"
+                  disabled={status === 'loading'}
                   size="sm"
-                  className="h-10 rounded-xl border border-border/60 bg-primary/90 px-4 text-primary-foreground shadow-[0_12px_35px_-20px_rgba(15,23,42,0.7)] hover:bg-primary"
+                  className="h-10 rounded-xl border border-border/60 bg-primary/90 px-4 text-primary-foreground shadow-[0_12px_35px_-20px_rgba(15,23,42,0.7)] hover:bg-primary disabled:opacity-50"
                   aria-label="Subscribe"
                 >
-                  <Mail className="h-4 w-4" aria-hidden />
+                  {status === 'loading' ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : status === 'success' ? (
+                    <CheckCircle2 className="h-4 w-4 text-green-400" />
+                  ) : (
+                    <Mail className="h-4 w-4" aria-hidden />
+                  )}
                 </Button>
-              </div>
+              </form>
+              {status === 'success' && (
+                <p className="mt-2 text-[10px] text-green-500 font-medium">Subscribed successfully!</p>
+              )}
+              {status === 'error' && (
+                <p className="mt-2 text-[10px] text-red-500 font-medium">Failed to subscribe. Please try again.</p>
+              )}
             </div>
 
             {/* Contact Info */}
@@ -145,25 +210,28 @@ export function FooterBlock() {
                 className="flex items-center gap-3"
               >
                 <Mail className="h-4 w-4 text-primary" aria-hidden />
-                <span>orvynlabs@gmail.com</span>
+                <a href="mailto:orvynlabs@gmail.com" className="hover:text-primary transition-colors">orvynlabs@gmail.com</a>
               </motion.div>
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : { x: 5 }}
                 className="flex items-center gap-3"
               >
                 <Phone className="h-4 w-4 text-primary" aria-hidden />
-                <span>+91 9496022026</span>
+                <a href="https://wa.me/919496022026" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+91 9496022026</a>
               </motion.div>
               <motion.div
                 whileHover={shouldReduceMotion ? undefined : { x: 5 }}
                 className="flex items-center gap-3 pt-2"
               >
-                <p className="text-xs text-muted-foreground italic">
-                  'Built on Structure. Designed to Scale.'
+                <p className="text-[11px] uppercase tracking-widest text-muted-foreground/60">
+                  Built on Structure. Designed to Scale.
                 </p>
               </motion.div>
             </div>
           </motion.div>
+
+          {/* Spacer for alignment */}
+          <div className="hidden lg:block lg:col-span-1"></div>
 
           {/* Footer Links */}
           {footerLinks.map((section, sectionIndex) => (
@@ -180,23 +248,27 @@ export function FooterBlock() {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <motion.li
-                    key={link}
+                    key={link.name}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: linkIndex * 0.05 }}
                   >
-                    <motion.a
-                      href="#"
-                      whileHover={
-                        shouldReduceMotion
-                          ? undefined
-                          : { x: 5, color: "hsl(var(--primary))" }
-                      }
+                    <Link
+                      href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
-                    </motion.a>
+                      <motion.span
+                        whileHover={
+                          shouldReduceMotion
+                            ? undefined
+                            : { x: 5, color: "hsl(var(--primary))" }
+                        }
+                        className="inline-block"
+                      >
+                        {link.name}
+                      </motion.span>
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -236,10 +308,11 @@ export function FooterBlock() {
                   delay: 0.6 + index * 0.05,
                 }}
               >
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="h-9 w-9 rounded-full border border-border/60 bg-white/5 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+                <Link
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-9 w-9 rounded-full border border-border/60 bg-white/5 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary flex items-center justify-center p-0"
                   aria-label={social.label}
                 >
                   <motion.div
@@ -247,7 +320,7 @@ export function FooterBlock() {
                   >
                     <social.icon className="h-4 w-4" aria-hidden />
                   </motion.div>
-                </Button>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -260,9 +333,9 @@ export function FooterBlock() {
             transition={{ delay: 0.6 }}
             className="flex items-center gap-2 text-sm text-muted-foreground"
           >
-            <span>© 2024 ORVYN LABS. All rights reserved.</span>
-            <Badge variant="outline" className="text-xs">
-              v1.0.0
+            <span>© {new Date().getFullYear()} ORVYN LABS. All rights reserved.</span>
+            <Badge variant="outline" className="text-[10px] py-0 h-4 uppercase tracking-tighter">
+              BETA
             </Badge>
           </motion.div>
 

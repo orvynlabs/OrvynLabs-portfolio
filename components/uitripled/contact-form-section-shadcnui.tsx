@@ -44,9 +44,33 @@ export function ContactFormSection() {
     message: "",
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus('error');
+    }
   };
 
   const handleChange = (
@@ -275,14 +299,25 @@ export function ContactFormSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white text-black transition-all hover:bg-[#e5e5e5] hover:shadow-lg"
+                  disabled={status === 'loading'}
+                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white text-black transition-all hover:bg-[#e5e5e5] hover:shadow-lg disabled:opacity-50"
                 >
-                  Send Message
+                  {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed to Send' : 'Send Message'}
                   <Send
-                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    className={`h-4 w-4 transition-transform group-hover:translate-x-1 ${status === 'loading' ? 'animate-pulse' : ''}`}
                     aria-hidden="true"
                   />
                 </Button>
+                {status === 'success' && (
+                  <p className="mt-2 text-center text-xs text-green-500 font-medium italic">
+                    We've received your message! Expect a response within 24 hours.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p className="mt-2 text-center text-xs text-red-500 font-medium italic">
+                    Something went wrong. Please try again or email us directly at orvynlabs@gmail.com
+                  </p>
+                )}
               </motion.div>
 
               <p className="text-xs text-foreground/60">

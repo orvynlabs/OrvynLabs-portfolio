@@ -8,35 +8,6 @@ import Link from 'next/link'
 
 const links = [
     {
-        group: 'Product',
-        items: [
-            {
-                title: 'Features',
-                href: '#',
-            },
-            {
-                title: 'Solution',
-                href: '#',
-            },
-            {
-                title: 'Customers',
-                href: '#',
-            },
-            {
-                title: 'Pricing',
-                href: '#',
-            },
-            {
-                title: 'Help',
-                href: '#',
-            },
-            {
-                title: 'About',
-                href: '#',
-            },
-        ],
-    },
-    {
         group: 'Solution',
         items: [
             {
@@ -81,11 +52,11 @@ const links = [
                 href: '#',
             },
             {
-                title: 'Blog',
+                title: 'Services',
                 href: '#',
             },
             {
-                title: 'Press',
+                title: 'Works',
                 href: '#',
             },
             {
@@ -94,27 +65,6 @@ const links = [
             },
             {
                 title: 'Help',
-                href: '#',
-            },
-        ],
-    },
-    {
-        group: 'Legal',
-        items: [
-            {
-                title: 'Licence',
-                href: '#',
-            },
-            {
-                title: 'Privacy',
-                href: '#',
-            },
-            {
-                title: 'Cookies',
-                href: '#',
-            },
-            {
-                title: 'Security',
                 href: '#',
             },
         ],

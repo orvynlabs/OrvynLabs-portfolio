@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { HeroHeader } from '@/components/header'
 import { FooterBlock } from '@/components/uitripled/footer-block-shadcnui'
+import RoadmapSection from '@/components/roadmap-section'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -140,68 +141,8 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* The Story/Philosophy Section */}
-                <section className="py-20 md:py-28">
-                    <div className="mx-auto max-w-[90rem] px-6 lg:px-16 xl:px-24">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-80px' }}
-                            transition={{ duration: 0.6 }}
-                            className="grid md:grid-cols-2 gap-16 items-start"
-                        >
-                            <div>
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="h-px w-12 bg-[white]/30" />
-                                    <span className="font-display text-sm italic text-[white] tracking-wide uppercase font-bold">The Journey</span>
-                                </div>
-                                <h2 className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] tracking-tight mb-6">
-                                    From Calicut to <br />Global Products.
-                                </h2>
-                                <div className="space-y-4 text-white/50 leading-relaxed">
-                                    <p>
-                                        Our story began in Calicut. Shortly after completing our BCA degrees, four developers united by a shared obsession for clean code and systems thinking decided to move beyond the traditional "agency" model.
-                                    </p>
-                                    <p>
-                                        We realized that many founders weren't just looking for websites; they needed <strong>infrastructure</strong>. They needed systems that could handle users, secure payments, and scale without breaking.
-                                    </p>
-                                    <p>
-                                        Today, <strong>ORVYN LABS</strong> is a specialized 4-member team. We operate at the intersection of product engineering and growth strategy, using the <strong>MERN stack</strong> to build high-stakes digital products.
-                                    </p>
-                                    <div className="pt-4 flex flex-col gap-3">
-                                        <p className="italic text-white/60 font-medium flex items-center gap-2">
-                                            <ChevronRight size={16} className="text-[white]" />
-                                            No messy development. Only structured systems.
-                                        </p>
-                                        <p className="text-sm flex items-center gap-2 text-white/30 font-display">
-                                            <MapPin size={14} className="text-[white]" />
-                                            Rooted in Calicut, Kerala. Scaling Worldwide.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Stats Grid */}
-                            <div className="grid grid-cols-2 gap-4 md:mt-16">
-                                {stats.map((stat, i) => (
-                                    <motion.div
-                                        key={stat.label}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1, duration: 0.5 }}
-                                        className="rounded-2xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm group hover:border-[white]/50 transition-colors"
-                                    >
-                                        <span className="font-display text-3xl md:text-4xl font-bold text-[#f0f0f0] group-hover:text-[white] transition-colors">
-                                            {stat.number}
-                                        </span>
-                                        <p className="mt-2 text-sm text-white/50 uppercase tracking-widest font-semibold">{stat.label}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                {/* The Roadmap Section */}
+                <RoadmapSection />
 
                 {/* Core Values Section */}
                 <section className="py-20 md:py-28 border-t border-white/[0.06]">
