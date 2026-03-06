@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Cursor from "@/components/ui/cursor";
 import Preloader from "@/components/ui/preloader";
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     title: "ORVYN LABS | Startup Web Development Studio",
     description:
       "ORVYN LABS engineers scalable MERN and Next.js systems for startups. Architecting robust digital products from MVP to SaaS platforms.",
-    url: "https://orvynlabs.in",
+    url: "https://www.orvynlabs.in",
     siteName: "ORVYN LABS",
     images: [
       {
@@ -86,9 +87,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "ORVYN LABS",
-  url: "https://orvynlabs.in",
-  logo: "https://orvynlabs.in/logo.png",
-  image: "https://orvynlabs.in/opengraph-image.png",
+  url: "https://www.orvynlabs.in",
+  logo: "https://www.orvynlabs.in/logo.png",
+  image: "https://www.orvynlabs.in/opengraph-image.png",
   description:
     "ORVYN LABS engineers scalable MERN and Next.js systems for startups. Architecting robust digital products from MVP to SaaS platforms.",
   address: {
@@ -123,12 +124,27 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd),
           }}
         />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-37BJF6L9ZJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-37BJF6L9ZJ');
+          `}
+        </Script>
       </head>
 
       <body
