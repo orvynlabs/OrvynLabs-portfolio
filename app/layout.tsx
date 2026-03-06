@@ -43,6 +43,14 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 
+  // NEW
+  alternates: {
+    canonical: "https://www.orvynlabs.in",
+  },
+
+  // NEW
+  themeColor: "#7a6af6",
+
   openGraph: {
     title: "ORVYN LABS | Startup Web Development Studio",
     description:
@@ -147,9 +155,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body
-        className={`${inter.variable} ${bricolage.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${bricolage.variable} antialiased`}>
         <Preloader />
         <Cursor />
         {children}
