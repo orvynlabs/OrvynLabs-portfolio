@@ -17,6 +17,7 @@ interface ProjectCardProps {
         github?: string;
     };
     className?: string;
+    onClick?: () => void;
 }
 
 const defaultProject = {
@@ -36,11 +37,12 @@ export function ProjectCard({
     image = defaultProject.image,
     links = defaultProject.links,
     className,
+    onClick,
 }: ProjectCardProps) {
     return (
-        <a
-            href={links?.demo || links?.github || '#'}
-            className={cn("block w-full group", className)}
+        <div
+            onClick={onClick}
+            className={cn("block w-full group cursor-pointer", className)}
         >
             <div className="flex flex-col h-full overflow-hidden rounded-[24px] border border-white/10 bg-[#060606] transition-opacity hover:opacity-80 p-3">
                 <div className="relative aspect-video overflow-hidden rounded-[16px]">
@@ -68,6 +70,6 @@ export function ProjectCard({
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     );
 }

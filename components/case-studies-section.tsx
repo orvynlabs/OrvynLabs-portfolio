@@ -1,51 +1,110 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { ProjectCard } from './project-card'
 import ScrollReveal from './ui/scroll-reveal'
+import { ProjectModal } from './project-modal'
 
 interface Project {
     name: string
+    category?: string
     description: string
+    fullDescription?: string
     tags: string[]
     image: string
     links: {
         demo?: string
         github?: string
     }
+    features?: string[]
+    stats?: Record<string, string>
 }
 
 const projects: Project[] = [
     {
-        name: 'NEXTZEN',
-        description: 'A flagship MERN e-commerce system with AI logic and secure payment flows.',
-        tags: ['E-Commerce', 'MERN', 'AI'],
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
-        links: { demo: "#" }
+        name: "AZURA RESORTS",
+        category: "Hospitality Web System",
+        description: "A premium, 'Anti-Gravity' inspired digital experience for a private peninsula resort.",
+        fullDescription: "AZURA RESORTS is a high-end web platform designed for a private peninsula resort. It features a stunning glassmorphic UI, real-time booking context, and a smooth navigation experience using React Lenis and Framer Motion.",
+        tags: ["Next.js", "Framer Motion", "Tailwind", "GSAP"],
+        image: "/projects/azura-project1.png",
+        links: { demo: "https://azuraresorts.in" },
+        features: [
+            "Glassmorphic UI Design",
+            "Smooth Scroll Integration (Lenis)",
+            "Real-time Booking Availability",
+            "Mobile-Responsive Layout"
+        ],
+        stats: {
+            performance: "Ultra-Smooth",
+            tech: "Next.js 14",
+            scale: "Private Resort"
+        }
     },
     {
-        name: 'Pfeiffer',
-        description: 'Real estate property listing and management platform showcasing premium homes.',
-        tags: ['Real Estate', 'Properties'],
-        image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=500&fit=crop',
-        links: { demo: "#" }
+        name: "NEXTZEN",
+        category: "AI-Enhanced E-commerce",
+        description: "A flagship MERN e-commerce system with AI logic and secure payment flows.",
+        fullDescription: "NEXTZEN is a high-performance full-stack e-commerce platform featuring an LLM-powered chatbot for contextual assistance and a real-time dashboard for inventory management. It uses Gemmini API for AI features.",
+        tags: ["E-Commerce", "MERN", "AI", "Gemini API"],
+        image: "/projects/nextzen-project2.png",
+        links: { demo: "https://shop.mubashiir.in" },
+        features: [
+            "AI Chatbot for Sales Support",
+            "Dynamic Inventory Alerts",
+            "Secure Payment Gateway",
+            "Admin Dashboard with Analytics"
+        ],
+        stats: {
+            stack: "MERN + AI",
+            realtime: "Dashboard",
+            deployment: "Production Ready"
+        }
     },
     {
-        name: 'Puls',
-        description: 'Fitness and wellness tracking application with personalized workout routines.',
-        tags: ['Wellness', 'Fitness'],
-        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=500&fit=crop',
-        links: { demo: "#" }
+        name: "NUVEE",
+        category: "Cloud Perfume Shop",
+        description: "Cloud-powered perfume e-commerce with secure authentication and AWS scalability.",
+        fullDescription: "NUVEE is a enterprise-level perfume e-commerce solution architected for high volume. It leverages AWS services for global scalability, including S3 for persistent storage and CloudFront for high-speed content delivery.",
+        tags: ["MERN", "AWS", "Razorpay", "CI/CD"],
+        image: "/projects/nuvee-project4.png",
+        links: { demo: "https://nuvee-perfume.niyaf.xyz/" },
+        features: [
+            "AWS S3 Asset Management",
+            "Razorpay Integration",
+            "Automated CI/CD Pipeline",
+            "CDN-Optimized Images"
+        ],
+        stats: {
+            hosting: "AWS EC2",
+            cdn: "CloudFront",
+            security: "JWT + SSL"
+        }
     },
     {
-        name: 'EyeCatcher',
-        description: 'E-commerce store for beauty and hair products featuring elegant UI.',
-        tags: ['Beauty', 'Hairs'],
-        image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=500&fit=crop',
-        links: { demo: "#" }
-    },
+        name: "SHOEVERSE",
+        category: "Footwear Marketplace",
+        description: "A modern MERN stack shoe e-commerce platform focused on speed and clean UI.",
+        fullDescription: "SHOEVERSE provides a sleek and minimalist shopping experience for footwear. Built with TypeScript for reliability, it features advanced search filters, a dynamic shopping cart, and lightning-fast page loads.",
+        tags: ["MERN", "TypeScript", "Tailwind"],
+        image: "/projects/shoeverse-project3.png",
+        links: { demo: "https://shoe-ecommerce-blush.vercel.app/" },
+        features: [
+            "Advanced Product Filtering",
+            "Fast Search Engine",
+            "Minimalist Clean UI",
+            "Type-Safe Development"
+        ],
+        stats: {
+            speed: "Optimized",
+            ui: "Minimal",
+            mobile: "100/100"
+        }
+    }
 ]
 
 export default function CaseStudiesSection() {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
     return (
         <section id="our-work" className="cs-section py-24 bg-[#000000]">
             {/* Header */}
@@ -77,10 +136,28 @@ export default function CaseStudiesSection() {
                             tags={project.tags}
                             image={project.image}
                             links={project.links}
+                            onClick={() => setSelectedProject(project)}
                         />
                     ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            <ProjectModal
+                isOpen={!!selectedProject}
+                onClose={() => setSelectedProject(null)}
+                project={selectedProject ? {
+                    title: selectedProject.name,
+                    category: selectedProject.category,
+                    description: selectedProject.description,
+                    fullDescription: selectedProject.fullDescription,
+                    tags: selectedProject.tags,
+                    image: selectedProject.image,
+                    links: selectedProject.links,
+                    features: selectedProject.features,
+                    stats: selectedProject.stats
+                } : null}
+            />
         </section>
     )
 }

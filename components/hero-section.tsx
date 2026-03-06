@@ -128,12 +128,12 @@ export default function HeroSection() {
 
                                             {/* Vertical Marquee */}
                                             <div className="absolute left-0 right-0 top-0 flex w-full flex-col items-center gap-3 py-3 animate-marquee-vertical hover:[animation-play-state:paused]">
-                                                <Image src="/projects/project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/azura-project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/nextzen-project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                                 <Image src="/projects/project3.png" alt="ORVYN LABS SaaS platform development" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                                 {/* Duplicate for seamless infinite loop */}
-                                                <Image src="/projects/project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
-                                                <Image src="/projects/project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/azura-project1.png" alt="ORVYN LABS scalable MERN system architecture" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
+                                                <Image src="/projects/nextzen-project2.png" alt="NEXTZEN full stack e-commerce platform dashboard" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                                 <Image src="/projects/project3.png" alt="ORVYN LABS SaaS platform development" width={300} height={200} className="w-[85%] rounded-[0.85rem] border border-white/10 object-cover shadow-[0_0_15px_rgba(0,0,0,0.5)]" />
                                             </div>
 
