@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -48,9 +48,6 @@ export const metadata: Metadata = {
     canonical: "https://www.orvynlabs.in",
   },
 
-  // NEW
-  themeColor: "#7a6af6",
-
   openGraph: {
     title: "ORVYN LABS | Startup Web Development Studio",
     description:
@@ -88,6 +85,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#7a6af6",
 };
 
 // Structured Data

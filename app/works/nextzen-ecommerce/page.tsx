@@ -10,6 +10,7 @@ import {
     Globe,
     Terminal,
     ArrowLeft,
+    ArrowRight,
     ChevronRight,
     ShoppingBag,
     Database,
