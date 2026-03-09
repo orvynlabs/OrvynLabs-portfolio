@@ -13,6 +13,7 @@ const menuItems = [
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Our Work', href: '/works' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
 ]
 
@@ -165,6 +166,7 @@ export const HeroHeader = () => {
                                 { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
                                 { label: 'Services', ariaLabel: 'View our services', link: '/services' },
                                 { label: 'Our Work', ariaLabel: 'View our work', link: '/works' },
+                                { label: 'Blog', ariaLabel: 'Read our blog', link: '/blog' },
                                 { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
                             ] as any}
                             socialItems={[
