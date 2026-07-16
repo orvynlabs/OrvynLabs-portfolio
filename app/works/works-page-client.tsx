@@ -41,7 +41,7 @@ const featuredProjects = [
         description: "A high-performance full-stack platform for men's apparel featuring an LLM-powered chatbot for contextual assistance and a dashboard-driven inventory alert system.",
         fullDescription: "NEXTZEN is a high-performance, full-stack e-commerce platform specializing in men's apparel. It integrates an LLM-powered chatbot for contextual customer assistance, providing personalized shopping recommendations and support. The platform also includes a robust dashboard-driven inventory alert system for efficient stock management. Developed using the MERN Stack, Gemini API, and deployed on AWS S3/EC2 with CI/CD pipelines, it ensures a scalable, real-time, and secure shopping experience with integrated Razorpay payments.",
         tags: ["MERN Stack", "Gemini API", "AWS S3/EC2", "Razorpay", "CI/CD"],
-        stats: { scale: "Scalable Arch", performance: "Real-time", tech: "MERN + AI", security: "Payment Gateway " },
+        stats: { scale: "Scalable Arch", performance: "Real-time", tech: "MERN + AI + AWS", security: "Payment Gateway" },
         features: ["LLM-Powered Chatbot", "Dashboard Inventory Alerts", "Secure Payment Gateway (Razorpay)", "CI/CD Pipelines", "Scalable Cloud Infrastructure"],
         image: "/projects/nextzen-project2.png",
         link: "https://shop.mubashiir.in",
