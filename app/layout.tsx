@@ -40,7 +40,13 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "512x512" },
+    ],
   },
 
   // NEW
@@ -97,7 +103,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "ORVYN LABS",
   url: "https://www.orvynlabs.in",
-  logo: "https://www.orvynlabs.in/logo.png",
+  logo: "https://www.orvynlabs.in/icon.png",
   image: "https://www.orvynlabs.in/opengraph-image.png",
   description:
     "ORVYN LABS engineers scalable MERN and Next.js systems for startups. Architecting robust digital products from MVP to SaaS platforms.",

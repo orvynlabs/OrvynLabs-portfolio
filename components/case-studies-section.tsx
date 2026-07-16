@@ -42,22 +42,22 @@ const projects: Project[] = [
     },
     {
         name: "NEXTZEN",
-        category: "AI-Enhanced E-commerce",
-        description: "A flagship MERN e-commerce system with AI logic and secure payment flows.",
-        fullDescription: "NEXTZEN is a high-performance full-stack e-commerce platform featuring an LLM-powered chatbot for contextual assistance and a real-time dashboard for inventory management. It uses Gemmini API for AI features.",
-        tags: ["E-Commerce", "MERN", "AI", "Gemini API"],
+        category: "Full Stack Engineering & AI",
+        description: "A high-performance automated commerce engine with an AI Style Assistant.",
+        fullDescription: "NEXTZEN is an automated commerce engine built for scale. It features a product-specific AI Style Assistant for contextual advice and a custom DevOps pipeline handling media-rich content via S3 and automated deployments to AWS EC2 using Docker.",
+        tags: ["AWS EC2", "AWS S3", "Docker", "Gemini AI"],
         image: "/projects/nextzen-project2.png",
-        links: { demo: "https://shop.mubashiir.in" },
+        links: { demo: "https://nextzen.mubashiir.in" },
         features: [
-            "AI Chatbot for Sales Support",
-            "Dynamic Inventory Alerts",
-            "Secure Payment Gateway",
-            "Admin Dashboard with Analytics"
+            "AI Style Assistant",
+            "Automated CI/CD Pipeline",
+            "AWS S3 Media Delivery",
+            "Docker Containerization"
         ],
         stats: {
-            stack: "MERN + AI",
-            realtime: "Dashboard",
-            deployment: "Production Ready"
+            stack: "AWS + AI",
+            pipeline: "CI/CD",
+            scale: "Enterprise"
         }
     },
     {

@@ -17,7 +17,11 @@ import {
     Lock,
     Wallet,
     Users,
-    LayoutDashboard
+    LayoutDashboard,
+    Cloud,
+    Container,
+    Zap,
+    Sparkles
 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -66,20 +70,26 @@ export default function NextzenCaseStudy() {
                         <div className="grid lg:grid-cols-12 gap-12 items-end">
                             <div className="lg:col-span-8 space-y-6">
                                 <span className="gsap-case-fade text-xs uppercase tracking-[0.3em] text-white/60 font-bold block">
-                                    Case Study: E-commerce Platform
+                                    Full Stack Engineering Case Study
                                 </span>
                                 <h1 className="gsap-case-fade font-display text-5xl md:text-8xl font-extrabold tracking-tight">
                                     NEXTZEN <br />
-                                    <span className="text-white/40 font-normal italic">Full Stack Commerce.</span>
+                                    <span className="text-white/40 font-normal italic">Automated Commerce.</span>
                                 </h1>
                             </div>
                             <div className="lg:col-span-4 gsap-case-fade pb-4">
                                 <div className="flex flex-wrap gap-3">
                                     <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-widest text-white/70">
-                                        MERN Stack
+                                        Dockerized Backend
                                     </div>
                                     <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-widest text-white/70">
-                                        AI Integration
+                                        AWS Architecture
+                                    </div>
+                                    <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-widest text-white/70">
+                                        CI/CD Pipeline
+                                    </div>
+                                    <div className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-widest text-white/70">
+                                        AI Style Assistant
                                     </div>
                                 </div>
                             </div>
@@ -111,35 +121,38 @@ export default function NextzenCaseStudy() {
                                 {/* Problem */}
                                 <div className="space-y-6">
                                     <h2 className="text-3xl font-bold border-b border-white/10 pb-4">The Challenge</h2>
-                                    <p className="text-xl text-white/60 leading-relaxed">
-                                        Building a scalable men's fashion e-commerce platform that combines aesthetic visual appeal with
-                                        industrial-grade backend scalability. The goal was to eliminate friction in the shopping experience
-                                        while providing administrators with absolute control over inventory and customer data.
+                                    <p className="text-xl text-white/60 leading-relaxed text-left">
+                                        NextZen required more than just an online store; it needed a high-performance infrastructure
+                                        capable of handling viral growth. The challenge was to move away from standard shared hosting
+                                        and build a <strong>custom DevOps pipeline</strong> that handles media-rich content via S3
+                                        and automates deployments to AWS EC2 using Docker containers. Additionally, the platform
+                                        needed a way to guide users through a premium apparel collection without human intervention.
                                     </p>
                                 </div>
 
                                 {/* Architecture */}
                                 <div className="space-y-6">
-                                    <h2 className="text-3xl font-bold border-b border-white/10 pb-4">The Architecture</h2>
-                                    <p className="text-lg text-white/50 leading-relaxed">
-                                        We implemented a full MERN stack system with a modular backend architecture.
-                                        The frontend leverages React for a dynamic, lightning-fast UI, while the Node/Express
-                                        integration ensures high-speed API response times. MongoDB provides a flexible schema-less
-                                        structure capable of handling massive product variants and complex user wallets.
+                                    <h2 className="text-3xl font-bold border-b border-white/10 pb-4">The Infrastructure & AI</h2>
+                                    <p className="text-lg text-white/50 leading-relaxed text-left">
+                                        We engineered a hybrid deployment strategy. The frontend is hosted on Vercel Edge for
+                                        global speed, while the backend is fully containerized with <strong>Docker</strong> and
+                                        orchestrated on <strong>AWS EC2</strong>. We integrated a <strong>Product-Specific AI Style Assistant</strong>
+                                        using the Gemini API, which provides contextual styling advice, size recommendations, and
+                                        automated product discovery based on user behavior and product metadata.
                                     </p>
                                 </div>
 
                                 {/* Features Grid */}
                                 <div className="space-y-12">
-                                    <h2 className="text-3xl font-bold border-b border-white/10 pb-4">Core Features</h2>
+                                    <h2 className="text-3xl font-bold border-b border-white/10 pb-4">Core Engineering Features</h2>
                                     <div className="grid md:grid-cols-2 gap-8">
                                         {[
-                                            { title: "Product Variants", icon: ShoppingBag, desc: "Complex sizing and color matrix with real-time stock sync." },
-                                            { title: "Wallet System", icon: Wallet, desc: "In-app credit system for refunds and loyalty rewards." },
-                                            { title: "Referral Engine", icon: Users, desc: "Automated reward system for customer-driven growth." },
-                                            { title: "Admin Portal", icon: LayoutDashboard, desc: "Granular control over products, orders, and system settings." },
-                                            { title: "Auth Flow", icon: Lock, desc: "Secure JWT-based authentication with role-based access." },
-                                            { title: "Global Payments", icon: CreditCard, desc: "Bespoke Razorpay integration for native checkout feel." }
+                                            { title: "AI Style Assistant", icon: Sparkles, desc: "Context-aware LLM chatbot that acts as a 24/7 personal stylist, recommending apparel based on trends and user fit." },
+                                            { title: "Automated CI/CD", icon: Zap, desc: "GitHub Actions pipeline that builds, pushes to DockerHub, and deploys to EC2 on every production push." },
+                                            { title: "Refined Wallet API", icon: Wallet, desc: "Bespoke transaction logic for user credits, automated referral rewards, and secure joiner bonuses." },
+                                            { title: "AWS S3 Media Delivery", icon: Cloud, desc: "Optimized delivery of heavy premium apparel video assets through the AWS Global Network." },
+                                            { title: "Hybrid Auth", icon: ShieldCheck, desc: "JWT-based manual authentication with a fail-safe Google OAuth integration to prevent login crashes." },
+                                            { title: "Containerization", icon: Container, desc: "Dockerized Node.js environment ensuring environmental consistency between local and production." }
                                         ].map((f, i) => (
                                             <div key={i} className="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
                                                 <f.icon className="text-white/40 mb-4" size={24} />
@@ -155,9 +168,9 @@ export default function NextzenCaseStudy() {
                             <div className="gsap-case-fade space-y-12">
                                 <div className="p-8 rounded-2xl border border-white/10 bg-white/5 space-y-8 sticky top-32">
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Tech Stack</h4>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Tech Infrastructure</h4>
                                         <div className="flex flex-wrap gap-2">
-                                            {["MongoDB", "Express", "React", "Node.js", "JWT", "Razorpay"].map(item => (
+                                            {["AWS EC2", "AWS S3", "Docker", "Gemini AI", "GitHub Actions", "MongoDB", "Express", "Next.js"].map(item => (
                                                 <span key={item} className="px-3 py-1.5 rounded-lg border border-white/10 bg-black/40 text-[10px] font-bold text-white/80">
                                                     {item}
                                                 </span>
@@ -166,18 +179,18 @@ export default function NextzenCaseStudy() {
                                     </div>
 
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Duration</h4>
-                                        <p className="text-sm font-bold text-white">8 Weeks Engineering</p>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Deployment Flow</h4>
+                                        <p className="text-sm font-bold text-white">Full CI/CD Automation</p>
                                     </div>
 
                                     <div>
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Project Date</h4>
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">Launch Date</h4>
                                         <p className="text-sm font-bold text-white">August 2024</p>
                                     </div>
 
                                     <div className="pt-4">
                                         <Button asChild className="w-full rounded-xl bg-white text-black hover:bg-white/90 font-bold">
-                                            <Link href="https://shop.mubashiir.in" target="_blank">View Live Case</Link>
+                                            <Link href="https://nextzen.mubashiir.in" target="_blank">View Live Case</Link>
                                         </Button>
                                     </div>
                                 </div>
@@ -189,7 +202,7 @@ export default function NextzenCaseStudy() {
                 {/* Footer CTA */}
                 <section className="py-24 border-t border-white/10 text-center">
                     <div className="mx-auto max-w-4xl px-6 space-y-10">
-                        <h2 className="text-4xl font-bold">Like this architecture?</h2>
+                        <h2 className="text-4xl font-bold">Need a scalable commerce engine?</h2>
                         <Button asChild size="lg" className="rounded-full px-12 bg-white text-black hover:bg-white/90">
                             <Link href="/contact">Build Yours Now <ArrowRight fill="black" className="ml-2 h-4 w-4" /></Link>
                         </Button>
@@ -202,15 +215,3 @@ export default function NextzenCaseStudy() {
     )
 }
 
-const CreditCard = (props: any) => (
-    <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24" height="24" viewBox="0 0 24 24"
-        fill="none" stroke="currentColor" strokeWidth="2"
-        strokeLinecap="round" strokeLinejoin="round"
-    >
-        <rect width="20" height="14" x="2" y="5" rx="2" />
-        <line x1="2" x2="22" y1="10" y2="10" />
-    </svg>
-)
